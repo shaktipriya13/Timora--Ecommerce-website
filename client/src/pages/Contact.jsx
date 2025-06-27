@@ -4,7 +4,12 @@ import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
 
 const Contact = () => {
   return (
-    <Layout title={"Contact Us"}>
+    <Layout
+      title={"Contact us - ShopMitra"}
+      description={"Need help or have questions? Contact ShopMitra’s customer support for assistance, inquiries, or feedback."}
+      keywords={"ShopMitra contact, customer support, help center, contact ecommerce, support email, call support"}
+      author={"Shakti Priya"}
+    >
       <div className="row contactus ">
         <div className="col-md-6 ">
           <img

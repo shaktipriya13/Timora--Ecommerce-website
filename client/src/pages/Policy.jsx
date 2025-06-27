@@ -3,7 +3,12 @@ import Layout from "./../components/Layout/Layout";
 
 const Policy = () => {
     return (
-        <Layout title={"Privacy Policy"}>
+        <Layout
+            title={"Privacy Policy - ShopMitra"}
+            description={"Understand how ShopMitra protects your personal data. Read our privacy policy to learn more about your rights and data safety."}
+            keywords={"ShopMitra privacy policy, data protection, ecommerce privacy, user rights, GDPR, cookies policy"}
+            author={"Shakti Priya"}
+        >
             <div className="row contactus">
                 <div className="col-md-2">
                     <img

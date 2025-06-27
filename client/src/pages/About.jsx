@@ -3,7 +3,12 @@ import Layout from "./../components/Layout/Layout";
 
 const About = () => {
   return (
-    <Layout title={"About us - Ecommerce App"}>
+    <Layout
+      title={"About us - ShopMitra"}
+      description={"Discover ShopMitra’s mission, values, and our commitment to delivering an exceptional online shopping experience."}
+      keywords={"About ShopMitra, ecommerce company, online store vision, shopping goals, mission statement"}
+      author={"Shakti Priya"}
+    >
       <div className="row contactus ">
         <div className="col-md-6 ">
           <img
