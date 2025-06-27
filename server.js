@@ -3,7 +3,7 @@ import colors from "colors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
-import authRoutes from './routes/user.routes.js'
+import authRoutes from './routes/auth.routes.js'
 
 // configure env
 dotenv.config();
@@ -21,6 +21,7 @@ app.use(morgan('dev'));
 
 // routes
 app.use('/api/v1/auth', authRoutes);// means For every request starting with /api/v1/auth, use whatever routes are defined in authRoutes file
+
 
 // creating rest apis
 app.get('/', (req, res) => {

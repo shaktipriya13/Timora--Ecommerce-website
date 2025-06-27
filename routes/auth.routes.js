@@ -10,7 +10,8 @@ import express from "express";
 //     orderStatusController,
 // } from "../controllers/auth.controller.js";
 // import { isAdmin, requireSignIn } from "../middlewares/auth.middleware.js";
-import { loginController, registerController } from './../controllers/auth.controller.js';
+import { loginController, registerController, testController } from '../controllers/auth.controller.js';
+import { isAdmin, requireSignIn } from "../middlewares/auth.middleware.js";
 
 //router object
 //separte file me if router is created then we need a router
@@ -28,6 +29,8 @@ router.post("/login", loginController);
 
 // //test routes
 // router.get("/test", requireSignIn, isAdmin, testController);
+//test routes
+router.get("/test", requireSignIn, isAdmin, testController);
 
 // //protected User route auth
 // router.get("/user-auth", requireSignIn, (req, res) => {

@@ -120,8 +120,8 @@ export const loginController = async (req, res) => {
     }
 };
 
-export const testController = () => {
-
+export const testController = (req, res) => {
+    res.send('Protected route');
 }
 export const forgotPasswordController = () => {
 
