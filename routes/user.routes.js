@@ -1,15 +1,16 @@
 import express from "express";
-import {
-    registerController,
-    loginController,
-    testController,
-    forgotPasswordController,
-    updateProfileController,
-    getOrdersController,
-    getAllOrdersController,
-    orderStatusController,
-} from "../controllers/auth.controller.js";
+// import {
+//     registerController,
+//     loginController,
+//     testController,
+//     forgotPasswordController,
+//     updateProfileController,
+//     getOrdersController,
+//     getAllOrdersController,
+//     orderStatusController,
+// } from "../controllers/auth.controller.js";
 // import { isAdmin, requireSignIn } from "../middlewares/auth.middleware.js";
+import { loginController, registerController } from './../controllers/auth.controller.js';
 
 //router object
 //separte file me if router is created then we need a router
@@ -19,8 +20,8 @@ const router = express.Router();
 //REGISTER || METHOD POST
 router.post("/register", registerController);
 
-// //LOGIN || POST
-// router.post("/login", loginController);
+//LOGIN || POST
+router.post("/login", loginController);
 
 // //Forgot Password || POST
 // router.post("/forgot-password", forgotPasswordController);

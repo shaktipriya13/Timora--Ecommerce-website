@@ -20,7 +20,7 @@ app.use(express.json());//means req and res me we can also send json data
 app.use(morgan('dev'));
 
 // routes
-app.get('/api/v1/auth', authRoutes);
+app.use('/api/v1/auth', authRoutes);// means For every request starting with /api/v1/auth, use whatever routes are defined in authRoutes file
 
 // creating rest apis
 app.get('/', (req, res) => {
