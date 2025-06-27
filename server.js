@@ -3,6 +3,7 @@ import colors from "colors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
+import authRoutes from './routes/user.routes.js'
 
 // configure env
 dotenv.config();
@@ -18,12 +19,18 @@ app.use(express.json());//means req and res me we can also send json data
 // , whenever you get a request with JSON data in the body, automatically parse it and make it available in req.body if someonse sends a post request
 app.use(morgan('dev'));
 
+// routes
+app.get('/api/v1/auth', authRoutes);
+
 // creating rest apis
 app.get('/', (req, res) => {
     res.send(
         "<h1> Welcome to ecommer app</h1>"
     )
 })
+
+
+
 
 const PORT = process.env.PORT || 8080;//process comes by default wiht node
 // process ek built-in object hai Node.js me, jo aapko system ke sath interact karne deta hai.
