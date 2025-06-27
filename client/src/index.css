@@ -149,3 +149,30 @@
   color: white;
   padding: 20px 0px;
 }
+
+/* -------------- */
+
+.footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 20px 0;
+  margin-top: 60px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.footer h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: white;
+}
