@@ -11,7 +11,7 @@ export const registerController = async (req, res) => {
         //validations
         // these valiations could alos be removed and kept only in the client side
         if (!name) {
-            return res.send({ error: "Name is Required" });
+            return res.send({ message: "Name is Required" });
         }
         if (!email) {
             return res.send({ message: "Email is Required" });

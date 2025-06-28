@@ -4,6 +4,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../styles/AuthStyles.css";
 import { toast } from 'react-toastify';
+
+
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -18,6 +20,7 @@ const Register = () => {
         e.preventDefault();
         // prevent krne se page will not get refreshed and apni Single page application bni rhegi
         try {
+            console.log("Request URL:", "/api/v1/auth/register");
             const res = await axios.post("/api/v1/auth/register", {
                 name,
                 email,
@@ -27,14 +30,15 @@ const Register = () => {
                 answer,
             });
             if (res && res.data.success) {
-                toast.success(res.data && res.data.message);
+                toast.success("user register successfully");
                 navigate("/login");
             } else {
                 toast.error(res.data.message);
             }
         } catch (error) {
-            console.log(error);
-            toast.error("Something went wrong");
+            const errorMessage = error.response?.data?.message || error.message || "Something went wrong";
+            console.log("Error:", errorMessage);
+            toast.error(errorMessage);
         }
     };
 
@@ -49,7 +53,7 @@ const Register = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="name"
                             placeholder="Enter Your Name"
                             required
                             autoFocus
@@ -61,7 +65,7 @@ const Register = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="email"
                             placeholder="Enter Your Email "
                             required
                         />
@@ -72,7 +76,7 @@ const Register = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="form-control"
-                            id="exampleInputPassword1"
+                            id="Password1"
                             placeholder="Enter Your Password"
                             required
                         />
@@ -83,7 +87,7 @@ const Register = () => {
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="phone"
                             placeholder="Enter Your Phone"
                             required
                         />
@@ -94,7 +98,7 @@ const Register = () => {
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="address"
                             placeholder="Enter Your Address"
                             required
                         />
@@ -105,7 +109,7 @@ const Register = () => {
                             value={answer}
                             onChange={(e) => setAnswer(e.target.value)}
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="fav"
                             placeholder="What is Your Favorite sports"
                             required
                         />

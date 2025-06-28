@@ -6,8 +6,6 @@ import { BrowserRouter } from 'react-router-dom'
 // by wrapping app in BrowserRouter routing fxnality gets enabled in our application
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <StrictMode>
-      <App />
-    </StrictMode>,
+    <App />
   </BrowserRouter>
 )
