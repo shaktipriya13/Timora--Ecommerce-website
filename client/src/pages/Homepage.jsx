@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout/Layout';
-// import { useAuth } from '../context/auth.jsx';
+import { useAuth } from '../context/auth.jsx';
 
 const Homepage = () => {
-    // const [auth, setauth] = useAuth();
+    const [auth, setauth] = useAuth();
+
     return (
         <Layout
             title={"ShopMitra - Your Trusted Online Shopping Partner"}
@@ -14,7 +15,7 @@ const Homepage = () => {
             <h1>
                 Home page
             </h1>
-            {/* <pre>{JSON.stringify(auth, null, 4)}</pre> */}
+            <pre>{JSON.stringify(auth, null, 4)}</pre>
         </Layout>
     );
 }

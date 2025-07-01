@@ -1,8 +1,19 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { GiShoppingBag } from "react-icons/gi";
+import { useAuth } from '../../context/auth';
+import { toast } from 'react-toastify';
 
 const Header = () => {
+    const [auth, setauth] = useAuth();
+    const handleLogout = () => {
+        setauth({
+            ...auth, user: null, token: ''
+        })
+        localStorage.removeItem('auth');
+        setTimeout(() => {
+            toast.success("Logged Out ")
+        }, 300);
+    }
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -16,27 +27,28 @@ const Header = () => {
                         <li className="nav-item">
                             <NavLink to='/' className="nav-link active" aria-current="page"  >Home</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to='/register' className="nav-link"  >Register</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to='/login' className="nav-link"  >Login</NavLink>
-                        </li>
+                        {!auth.user ? (
+                            <>
+                                <li className="nav-item">
+                                    <NavLink to='/register' className="nav-link"  >Register</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to='/login' className="nav-link"  >Login</NavLink>
+                                </li>
+                            </>
+                        ) : (
+                            <li className="nav-item">
+                                <NavLink onClick={handleLogout} to='/login' className="nav-link"  >Logout</NavLink>
+                            </li>
+                        )
+                        }
                         <li className="nav-item">
                             <NavLink to='/cart' className="nav-link"  >Cart(0)</NavLink>
                         </li>
-                        {/* <li className="nav-item dropdown">
-                            <NavLink to='/' className="nav-link dropdown-toggle"   role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </NavLink>
 
-                        </li> */}
 
                     </ul>
-                    {/* <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form> */}
+
                 </div>
             </div>
         </nav>

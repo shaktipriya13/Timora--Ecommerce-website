@@ -6,12 +6,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../styles/AuthStyles.css";
+import { useAuth } from "../../context/auth";
 
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const [auth, setauth] = useAuth();
 
     // form function
     const handleSubmit = async (e) => {
@@ -27,7 +29,14 @@ const Login = () => {
                 toast.success("Logged in Successfully");
                 setTimeout(() => {
                     navigate("/");
-                }, 1500); // delay navigation by 1.5 seconds
+                }, 1000); // delay navigation by 1.5 seconds
+                setauth({
+                    ...auth,
+                    user: res.data.user,
+                    token: res.data.token
+                });
+                // json data is not supported in local storage, so first we need to store it in the string
+                localStorage.setItem('auth', JSON.stringify(res.data));//jitna bhi data ha wo local storage me add ho jayega , by storing in local storage the data will not get lost after refreshing
             }
 
             else {
@@ -35,7 +44,7 @@ const Login = () => {
             }
         } catch (error) {
             console.log(error);
-            toast.error("Something went wrong");
+            toast.error("Invalid credentials.");
         }
     };
 

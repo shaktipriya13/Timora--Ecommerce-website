@@ -160,7 +160,7 @@ const Register = () => {
                 toast.success("Registered Successfully");
                 setTimeout(() => {
                     navigate("/login");
-                }, 1500); // delay navigation by 1.5 seconds
+                }, 1000); // delay navigation by 1.5 seconds
             }
 
             else {
