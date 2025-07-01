@@ -5,11 +5,12 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from './context/auth.jsx'
 
-// by wrapping app in BrowserRouter routing fxnality gets enabled in our application
 createRoot(document.getElementById('root')).render(
-  <AuthProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </AuthProvider>
+  <StrictMode>
+    <AuthProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AuthProvider>
+  </StrictMode>
 )

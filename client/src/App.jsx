@@ -7,6 +7,8 @@ import PageNotFound from './pages/PageNotFound';
 import Policy from './pages/Policy';
 import Register from './pages/Auth/Register';
 import Login from './pages/Auth/Login';
+import Dashboard from './pages/user/Dashboard';
+import PrivateRoute from './components/Routes/Private';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -16,6 +18,11 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Homepage />} />
+
+        <Route path="/dashboard" element={<PrivateRoute />}>
+          <Route path="" element={<Dashboard />} />
+        </Route>
+        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />} />

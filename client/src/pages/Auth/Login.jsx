@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../styles/AuthStyles.css";
 import { useAuth } from "../../context/auth";
@@ -14,6 +14,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const [auth, setauth] = useAuth();
+    const location = useLocation();
 
     // form function
     const handleSubmit = async (e) => {
@@ -28,7 +29,7 @@ const Login = () => {
             if (res && res.data.success) {
                 toast.success("Logged in Successfully");
                 setTimeout(() => {
-                    navigate("/");
+                    navigate(location.state || "/");
                 }, 1000); // delay navigation by 1.5 seconds
                 setauth({
                     ...auth,
@@ -37,6 +38,7 @@ const Login = () => {
                 });
                 // json data is not supported in local storage, so first we need to store it in the string
                 localStorage.setItem('auth', JSON.stringify(res.data));//jitna bhi data ha wo local storage me add ho jayega , by storing in local storage the data will not get lost after refreshing
+
             }
 
             else {
@@ -90,3 +92,4 @@ const Login = () => {
 };
 
 export default Login;
+
