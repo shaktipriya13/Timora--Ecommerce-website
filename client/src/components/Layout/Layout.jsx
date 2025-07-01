@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { Helmet } from "react-helmet";
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Layout = ({ children, title, description, keywords, author }) => {
@@ -18,7 +19,7 @@ const Layout = ({ children, title, description, keywords, author }) => {
             </Helmet>
             <Header />
             <main style={{ minHeight: "75vh" }}>
-                <ToastContainer />{children}
+                <ToastContainer position="top-center" autoClose={3000} />{children}
             </main>
             {/* jo bhi page is wrapped with Layout.jsx usme Header and Footer ke bich children yani ki the page's componnt is shown */}
             <Footer />

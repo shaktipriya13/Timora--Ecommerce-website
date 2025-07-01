@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout/Layout';
+// import { useAuth } from '../context/auth.jsx';
 
 const Homepage = () => {
+    // const [auth, setauth] = useAuth();
     return (
         <Layout
             title={"ShopMitra - Your Trusted Online Shopping Partner"}
@@ -9,9 +11,10 @@ const Homepage = () => {
             keywords={"ShopMitra, online shopping, ecommerce, best prices, secure checkout, fast delivery"}
             author={"Shakti Priya"}
         >
-            <div>
+            <h1>
                 Home page
-            </div>
+            </h1>
+            {/* <pre>{JSON.stringify(auth, null, 4)}</pre> */}
         </Layout>
     );
 }
