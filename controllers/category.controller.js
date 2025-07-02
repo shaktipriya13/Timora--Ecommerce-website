@@ -57,7 +57,7 @@ export const updateCategoryController = async (req, res) => {
     }
 };
 
-// get all cat
+// get all categories
 export const categoryControlller = async (req, res) => {
     try {
         const category = await categoryModel.find({});
@@ -100,9 +100,10 @@ export const deleteCategoryCOntroller = async (req, res) => {
     try {
         const { id } = req.params;
         await categoryModel.findByIdAndDelete(id);
+        // fxns like findByIdandDelete are provided by mongoose
         res.status(200).send({
             success: true,
-            message: "Categry Deleted Successfully",
+            message: "Category Deleted Successfully",
         });
     } catch (error) {
         console.log(error);
