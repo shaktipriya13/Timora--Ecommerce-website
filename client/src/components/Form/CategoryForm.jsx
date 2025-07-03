@@ -10,6 +10,8 @@ const CategoryForm = ({ handleSubmit, value, setValue }) => {
                         className="form-control"
                         placeholder="Enter new category"
                         value={value}
+                        // we are getting value as a prop
+                        // so we can use it in the input field
                         onChange={(e) => setValue(e.target.value)}
                     />
                 </div>

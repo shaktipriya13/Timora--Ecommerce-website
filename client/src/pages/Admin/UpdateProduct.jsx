@@ -4,11 +4,12 @@ import AdminMenu from "./../../components/Layout/AdminMenu";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Select } from "antd";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const { Option } = Select;
 
-const CreateProduct = () => {
+const UpdateProduct = () => {
     const navigate = useNavigate();
+    const params = useParams();
     const [categories, setCategories] = useState([]);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -17,7 +18,30 @@ const CreateProduct = () => {
     const [quantity, setQuantity] = useState("");
     const [shipping, setShipping] = useState("");
     const [photo, setPhoto] = useState("");
+    const [id, setId] = useState("");
 
+    //get single product
+    const getSingleProduct = async () => {
+        try {
+            const { data } = await axios.get(
+                `http://localhost:8080/api/v1/product/get-product/${params.slug}`
+            );
+            setName(data.product.name);
+            setId(data.product._id);
+            setDescription(data.product.description);
+            setPrice(data.product.price);
+            setPrice(data.product.price);
+            setQuantity(data.product.quantity);
+            setShipping(data.product.shipping);
+            setCategory(data.product.category._id);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    useEffect(() => {
+        getSingleProduct();
+        //eslint-disable-next-line
+    }, []);
     //get all category
     const getAllCategory = async () => {
         try {
@@ -27,7 +51,7 @@ const CreateProduct = () => {
             }
         } catch (error) {
             console.log(error);
-            toast.error("Something went wrong in getting catgeory");
+            toast.error("Something wwent wrong in getting catgeory");
         }
     };
 
@@ -36,32 +60,7 @@ const CreateProduct = () => {
     }, []);
 
     //create product function
-    // const handleCreate = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const productData = new FormData();
-    //         productData.append("name", name);
-    //         productData.append("description", description);
-    //         productData.append("price", price);
-    //         productData.append("quantity", quantity);
-    //         productData.append("photo", photo);
-    //         productData.append("category", category);
-    //         const { data } = axios.post(
-    //             "http://localhost:8080/api/v1/product/create-product",
-    //             productData
-    //         );
-    //         if (data?.success) {
-    //             toast.error(data?.message);
-    //         } else {
-    //             toast.success("Product Created Successfully");
-    //             navigate("/dashboard/admin/products");
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //         toast.error("something went wrong");
-    //     }
-    // };
-    const handleCreate = async (e) => {
+    const handleUpdate = async (e) => {
         e.preventDefault();
         try {
             const productData = new FormData();
@@ -69,39 +68,48 @@ const CreateProduct = () => {
             productData.append("description", description);
             productData.append("price", price);
             productData.append("quantity", quantity);
-            productData.append("photo", photo);
+            photo && productData.append("photo", photo);
             productData.append("category", category);
-
-            // ✅ Await axios call
-            const { data } = await axios.post(
-                "http://localhost:8080/api/v1/product/create-product",
+            const { data } = axios.put(
+                `http://localhost:8080/api/v1/product/update-product/${id}`,
                 productData
             );
-
-            // ✅ Show success toast if creation succeeded
             if (data?.success) {
-                setTimeout(() => {
-                    toast.success("Product Created Successfully");
-                }, 500);
-                navigate("/dashboard/admin/products");
+                toast.error(data?.message);
             } else {
-                toast.error(data?.message || "Something went wrong");
+                toast.success("Product Updated Successfully");
+                navigate("/dashboard/admin/products");
             }
+        } catch (error) {
+            console.log(error);
+            toast.error("something went wrong");
+        }
+    };
+
+    //delete a product
+    const handleDelete = async () => {
+        try {
+            let answer = window.prompt("Are You Sure want to delete this product ? ");
+            if (!answer) return;
+            const { data } = await axios.delete(
+                `http://localhost:8080/api/v1/product/delete-product/${id}`
+            );
+            toast.success("Product DEleted Succfully");
+            navigate("/dashboard/admin/products");
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong");
         }
     };
-
     return (
         <Layout title={"Dashboard - Create Product"}>
-            <div className="container-fluid m-3 p-3 dashboard">
+            <div className="container-fluid m-3 p-3">
                 <div className="row">
                     <div className="col-md-3">
                         <AdminMenu />
                     </div>
                     <div className="col-md-9">
-                        <h1>Create Product</h1>
+                        <h1>Update Product</h1>
                         <div className="m-1 w-75">
                             <Select
                                 bordered={false}
@@ -110,10 +118,9 @@ const CreateProduct = () => {
                                 showSearch
                                 className="form-select mb-3"
                                 onChange={(value) => {
-                                    // this value we get as a prop from antd
                                     setCategory(value);
                                 }}
-                            // when we use antDesign Select component, we need to use the value prop else for normal form components we use e target.value
+                                value={category}
                             >
                                 {categories?.map((c) => (
                                     <Option key={c._id} value={c._id}>
@@ -128,18 +135,25 @@ const CreateProduct = () => {
                                         type="file"
                                         name="photo"
                                         accept="image/*"
-                                        // /* means we can upload any type of image */
                                         onChange={(e) => setPhoto(e.target.files[0])}
                                         hidden
                                     />
                                 </label>
                             </div>
                             <div className="mb-3">
-                                {/* div to preview the image, for previewing the image we can also use any other package */}
-                                {photo && (
+                                {photo ? (
                                     <div className="text-center">
                                         <img
                                             src={URL.createObjectURL(photo)}
+                                            alt="product_photo"
+                                            height={"200px"}
+                                            className="img img-responsive"
+                                        />
+                                    </div>
+                                ) : (
+                                    <div className="text-center">
+                                        <img
+                                            src={`http://localhost:8080/api/v1/product/product-photo/${id}`}
                                             alt="product_photo"
                                             height={"200px"}
                                             className="img img-responsive"
@@ -177,7 +191,6 @@ const CreateProduct = () => {
                             </div>
                             <div className="mb-3">
                                 <input
-                                    // sabki value ko bind krna ha state variable se
                                     type="number"
                                     value={quantity}
                                     placeholder="write a quantity"
@@ -195,14 +208,20 @@ const CreateProduct = () => {
                                     onChange={(value) => {
                                         setShipping(value);
                                     }}
+                                    value={shipping ? "yes" : "No"}
                                 >
                                     <Option value="0">No</Option>
                                     <Option value="1">Yes</Option>
                                 </Select>
                             </div>
                             <div className="mb-3">
-                                <button className="btn btn-primary" onClick={handleCreate}>
-                                    CREATE PRODUCT
+                                <button className="btn btn-primary" onClick={handleUpdate}>
+                                    UPDATE PRODUCT
+                                </button>
+                            </div>
+                            <div className="mb-3">
+                                <button className="btn btn-danger" onClick={handleDelete}>
+                                    DELETE PRODUCT
                                 </button>
                             </div>
                         </div>
@@ -213,4 +232,4 @@ const CreateProduct = () => {
     );
 };
 
-export default CreateProduct;
+export default UpdateProduct;

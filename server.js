@@ -67,7 +67,7 @@ const app = express();
 
 app.use(cors({
     origin: ['http://localhost:5173', 'http://localhost:5174'], // Allow Vite React frontend
-    methods: ['GET', 'POST', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
 }));
 app.use(express.json());
