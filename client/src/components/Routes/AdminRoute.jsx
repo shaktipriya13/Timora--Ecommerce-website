@@ -78,7 +78,7 @@ export default function AdminRoute() {
             try {
                 const res = await axios.get("http://localhost:8080/api/v1/auth/admin-auth", {
                     headers: {
-                        Authorization: `Bearer ${auth?.token}`,
+                        Authorization: `${auth?.token}`,
                     },
                 });
                 if (res.data.ok) {

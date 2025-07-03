@@ -46,6 +46,20 @@ const Login = () => {
                     navigate(redirectPath);
                 }, 1000);
             }
+            // if (res && res.data.success) {
+            //     console.log("Login response:", res.data);
+            //     toast.success("Logged in Successfully");
+            //     setauth({
+            //         ...auth,
+            //         user: res.data.user,
+            //         token: res.data.token,
+            //     });
+            //     localStorage.setItem("auth", JSON.stringify(res.data));
+            //     const role = res.data.user.role;
+            //     const redirectPath =
+            //         location.state?.from || (role === 1 ? "/dashboard/admin" : "/dashboard/user");
+            //     navigate(redirectPath); // Remove setTimeout for testing
+            // }
 
             else {
                 toast.error(res.data.message);

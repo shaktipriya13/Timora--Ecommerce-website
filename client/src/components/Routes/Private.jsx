@@ -76,11 +76,13 @@ export default function PrivateRoute() {
   useEffect(() => {
     const authCheck = async () => {
       try {
+        console.log("Token being sent:", auth?.token); // Add this
         const res = await axios.get("http://localhost:8080/api/v1/auth/user-auth", {
           headers: {
-            Authorization: `Bearer ${auth?.token}`,
+            Authorization: `${auth?.token}`,
           },
         });
+        console.log("User auth check response:", res.data); // Add this
         if (res.data.ok) {
           setOk(true);
         } else {

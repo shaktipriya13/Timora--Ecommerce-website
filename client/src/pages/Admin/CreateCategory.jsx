@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./../../components/Layout/Layout";
 import AdminMenu from "./../../components/Layout/AdminMenu";
-import toast from "react-toast";
+import { toast } from "react-toastify";
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
 const CreateCategory = () => {
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState([]);//there will be multiple values so we are using array
     const [name, setName] = useState("");
     const [visible, setVisible] = useState(false);
     const [selected, setSelected] = useState(null);
@@ -15,7 +15,7 @@ const CreateCategory = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post("/api/v1/category/create-category", {
+            const { data } = await axios.post("http://localhost:8080/api/v1/category/create-category", {
                 name,
             });
             if (data?.success) {
@@ -30,16 +30,17 @@ const CreateCategory = () => {
         }
     };
 
-    //get all cat
+    //fxn get all cat to get all categories
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get("/api/v1/category/get-category");
+            // in try we are sending an axios request to the backend to get all the categories
+            const { data } = await axios.get("http://localhost:8080/api/v1/category/get-category");
             if (data?.success) {
                 setCategories(data?.category);
             }
         } catch (error) {
             console.log(error);
-            toast.error("Something wwent wrong in getting catgeory");
+            toast.error("Something went wrong in getting catgeory");
         }
     };
 
@@ -110,6 +111,7 @@ const CreateCategory = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {/* we are going to show our data with the help of map method */}
                                     {categories?.map((c) => (
                                         <>
                                             <tr>
