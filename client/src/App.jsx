@@ -16,6 +16,7 @@ import CreateProduct from './pages/Admin/CreateProduct';
 import Users from './pages/Admin/Users';
 import Orders from './pages/user/Orders';
 import Profile from './pages/user/Profile';
+import ForgotPasssword from './pages/Auth/ForgotPassword';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -40,6 +41,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/forgot-password' element={<ForgotPasssword />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/policy' element={<Policy />} />

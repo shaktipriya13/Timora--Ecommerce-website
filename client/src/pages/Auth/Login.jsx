@@ -26,20 +26,7 @@ const Login = () => {
                 password,
 
             });
-            // if (res && res.data.success) {
-            //     toast.success("Logged in Successfully");
-            //     setTimeout(() => {
-            //         navigate(location.state || "/");
-            //     }, 1000); // delay navigation by 1.5 seconds
-            //     setauth({
-            //         ...auth,
-            //         user: res.data.user,
-            //         token: res.data.token
-            //     });
-            //     // json data is not supported in local storage, so first we need to store it in the string
-            //     localStorage.setItem('auth', JSON.stringify(res.data));//jitna bhi data ha wo local storage me add ho jayega , by storing in local storage the data will not get lost after refreshing
 
-            // }
             if (res && res.data.success) {
                 toast.success("Logged in Successfully");
 
@@ -100,10 +87,16 @@ const Login = () => {
                             required
                         />
                     </div>
+                    <div className="mb-3">
+                        <button type="submit" className="btn btn-primary" onClick={() => { navigate("/forgot-password") }}>
+                            Forgot Password
+                        </button>
+                    </div>
 
                     <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
                         Login
                     </button>
+
                 </form>
             </div>
         </Layout>

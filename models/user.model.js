@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema(
             required: true,
         },
         answer: {
+            // this field is for forgot password
             type: String,
             required: true,
         },
