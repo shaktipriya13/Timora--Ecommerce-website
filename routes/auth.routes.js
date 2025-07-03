@@ -17,7 +17,13 @@ router.post("/login", loginController);
 router.get("/test", requireSignIn, isAdmin, testController);
 
 //protected User route auth
-router.get("/dash", requireSignIn, (req, res) => {
+router.get("/user-auth", requireSignIn, (req, res) => {
+    res.status(200).send({ ok: true });
+    // here we wrote the controller directly as it was of just 1 line
+    // agar response ok:true rha then only we will be able to access the private route
+});
+//protected Admin route auth
+router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
     res.status(200).send({ ok: true });
     // here we wrote the controller directly as it was of just 1 line
     // agar response ok:true rha then only we will be able to access the private route

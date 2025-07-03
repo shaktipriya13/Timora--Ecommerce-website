@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 const Spinner = ({ path = "login" }) => {
+    // initial value login ki rkhi ha ,agar koi path is not mentioened to login par by default redirect kr dega
+    // agar path mention kiya to us par redirect kr dega
     const [count, setCount] = useState(3);
     const navigate = useNavigate();
     const location = useLocation();

@@ -26,19 +26,38 @@ const Login = () => {
                 password,
 
             });
+            // if (res && res.data.success) {
+            //     toast.success("Logged in Successfully");
+            //     setTimeout(() => {
+            //         navigate(location.state || "/");
+            //     }, 1000); // delay navigation by 1.5 seconds
+            //     setauth({
+            //         ...auth,
+            //         user: res.data.user,
+            //         token: res.data.token
+            //     });
+            //     // json data is not supported in local storage, so first we need to store it in the string
+            //     localStorage.setItem('auth', JSON.stringify(res.data));//jitna bhi data ha wo local storage me add ho jayega , by storing in local storage the data will not get lost after refreshing
+
+            // }
             if (res && res.data.success) {
                 toast.success("Logged in Successfully");
-                setTimeout(() => {
-                    navigate(location.state || "/");
-                }, 1000); // delay navigation by 1.5 seconds
+
                 setauth({
                     ...auth,
                     user: res.data.user,
-                    token: res.data.token
+                    token: res.data.token,
                 });
-                // json data is not supported in local storage, so first we need to store it in the string
-                localStorage.setItem('auth', JSON.stringify(res.data));//jitna bhi data ha wo local storage me add ho jayega , by storing in local storage the data will not get lost after refreshing
 
+                localStorage.setItem("auth", JSON.stringify(res.data));
+
+                const role = res.data.user.role;
+                const redirectPath =
+                    location.state?.from || (role === 1 ? "/dashboard/admin" : "/dashboard/user");
+
+                setTimeout(() => {
+                    navigate(redirectPath);
+                }, 1000);
             }
 
             else {
