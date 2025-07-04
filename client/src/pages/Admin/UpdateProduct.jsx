@@ -77,7 +77,9 @@ const UpdateProduct = () => {
             if (data?.success) {
                 toast.error(data?.message);
             } else {
-                toast.success("Product Updated Successfully");
+                setTimeout(() => {
+                    toast.success("Product Updated Successfully");
+                }, 1000);
                 navigate("/dashboard/admin/products");
             }
         } catch (error) {
@@ -90,11 +92,16 @@ const UpdateProduct = () => {
     const handleDelete = async () => {
         try {
             let answer = window.prompt("Are You Sure want to delete this product ? ");
+            // to prevent accidental deletion, we use window.prompt to ask for confirmation
+            // if the user clicks cancel, answer will be null
+            // instead of this we could also use ant design's Modal.confirm
             if (!answer) return;
             const { data } = await axios.delete(
                 `http://localhost:8080/api/v1/product/delete-product/${id}`
             );
-            toast.success("Product DEleted Succfully");
+            setTimeout(() => {
+                toast.success("Product Deleted Successfully");
+            }, 500);
             navigate("/dashboard/admin/products");
         } catch (error) {
             console.log(error);

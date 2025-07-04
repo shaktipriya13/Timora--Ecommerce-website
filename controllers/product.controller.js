@@ -213,6 +213,8 @@ export const productFiltersController = async (req, res) => {
         let args = {};
         if (checked.length > 0) args.category = checked;
         if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
+        // gte means greater than or equal to
+        // lte means less than or equal to
         const products = await productModel.find(args);
         res.status(200).send({
             success: true,
@@ -249,14 +251,18 @@ export const productCountController = async (req, res) => {
 // product list base on page
 export const productListController = async (req, res) => {
     try {
-        const perPage = 6;
+        const perPage = 12; // number of products per page
         const page = req.params.page ? req.params.page : 1;
         const products = await productModel
+            // the below operations passed are called as queries
             .find({})
-            .select("-photo")
-            .skip((page - 1) * perPage)
-            .limit(perPage)
-            .sort({ createdAt: -1 });
+            .select("-photo") // exclude the photo field
+            .skip((page - 1) * perPage) // for pagination
+            .limit(perPage) // only get 12 items
+            .sort({
+                createdAt: -1
+                // The value - 1 means descending order(newest first).So latest products will come first.
+            }); // newest first
         res.status(200).send({
             success: true,
             products,

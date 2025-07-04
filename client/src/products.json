@@ -1,0 +1,595 @@
+[
+    {
+      "_id": { "$oid": "6687b577c7463f8a7b5cdaa7" },
+      "name": "Stunners X Quartz Analog Green Dial Stainless Steel Strap Watch For Gi...",
+      "slug": "stunners-x-quartz-analog-green-dial-stainless-steel-strap-watch-for-gi...",
+      "description": "Achieve timeless elegance with this watch featuring a clean white dial...",
+      "price": 2895,
+      "category": { "$oid": "68668891fe6f555781279852" },
+      "quantity": 30,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-07-04T11:05:27.259+00:00",
+      "updatedAt": "2025-07-04T11:05:27.259+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b578c7463f8a7b5cdaa8" },
+      "name": "Men's Executive Chronograph Watch with Leather Band",
+      "slug": "mens-executive-chronograph-watch-with-leather-band",
+      "description": "A sophisticated timepiece for the modern gentleman, featuring precise chronograph movement.",
+      "price": 7500,
+      "category": { "$oid": "6866887dfe6f55578127984b" },
+      "quantity": 25,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-06-20T14:30:00.123+00:00",
+      "updatedAt": "2025-07-01T09:15:30.456+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b579c7463f8a7b5cdaa9" },
+      "name": "Kids' Fun Time Digital Watch with Silicone Strap",
+      "slug": "kids-fun-time-digital-watch-with-silicone-strap",
+      "description": "Bright and durable, perfect for active kids with easy-to-read digital display.",
+      "price": 1200,
+      "category": { "$oid": "6864f1c481685d30ea97a63c" },
+      "quantity": 40,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-05-10T08:00:00.000+00:00",
+      "updatedAt": "2025-06-05T10:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b57ac7463f8a7b5cdaaa" },
+      "name": "New Arrival Smartwatch with Heart Rate Monitor",
+      "slug": "new-arrival-smartwatch-with-heart-rate-monitor",
+      "description": "Stay connected and track your health with our latest smartwatch model.",
+      "price": 9999,
+      "category": { "$oid": "686688a9fe6f555781279857" },
+      "quantity": 15,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-07-01T10:00:00.000+00:00",
+      "updatedAt": "2025-07-03T16:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b57bc7463f8a7b5cdaab" },
+      "name": "Couple's Classic Matching Analog Watches",
+      "slug": "couples-classic-matching-analog-watches",
+      "description": "Elegant and timeless watches designed for him and her, perfect for any occasion.",
+      "price": 5500,
+      "category": { "$oid": "686688b0fe6f55578127985c" },
+      "quantity": 20,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-06-15T11:20:00.000+00:00",
+      "updatedAt": "2025-06-25T14:45:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b57cc7463f8a7b5cdaac" },
+      "name": "Best Seller Sporty Digital Watch with Alarm",
+      "slug": "best-seller-sporty-digital-watch-with-alarm",
+      "description": "Our most popular digital watch, known for its durability and multi-functionality.",
+      "price": 3200,
+      "category": { "$oid": "6866a9f8006440e64317b58f" },
+      "quantity": 50,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-04-01T09:00:00.000+00:00",
+      "updatedAt": "2025-07-02T10:30:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b57dc7463f8a7b5cdaad" },
+      "name": "Modern Wall Clock with Silent Sweep Movement",
+      "slug": "modern-wall-clock-with-silent-sweep-movement",
+      "description": "A sleek and contemporary wall clock, perfect for any living space.",
+      "price": 4500,
+      "category": { "$oid": "6866aa05006440e64317b594" },
+      "quantity": 10,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-03-10T15:00:00.000+00:00",
+      "updatedAt": "2025-06-10T12:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b57ec7463f8a7b5cdaae" },
+      "name": "Women's Fashion Quartz Watch with Slim Band",
+      "slug": "womens-fashion-quartz-watch-with-slim-band",
+      "description": "A delicate and stylish watch, ideal for adding a touch of elegance to your outfit.",
+      "price": 3800,
+      "category": { "$oid": "68668891fe6f555781279852" },
+      "quantity": 35,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-05-25T09:30:00.000+00:00",
+      "updatedAt": "2025-06-20T11:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b57fc7463f8a7b5cdaaf" },
+      "name": "Men's Casual Field Watch with Nylon Strap",
+      "slug": "mens-casual-field-watch-with-nylon-strap",
+      "description": "Rugged and reliable, perfect for everyday adventures and outdoor activities.",
+      "price": 2700,
+      "category": { "$oid": "6866887dfe6f55578127984b" },
+      "quantity": 28,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-04-15T13:00:00.000+00:00",
+      "updatedAt": "2025-05-10T16:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b580c7463f8a7b5cdab0" },
+      "name": "Kids' Animal Theme Analog Watch",
+      "slug": "kids-animal-theme-analog-watch",
+      "description": "Cute and colorful, helping kids learn to tell time with their favorite animals.",
+      "price": 1000,
+      "category": { "$oid": "6864f1c481685d30ea97a63c" },
+      "quantity": 45,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-03-01T10:00:00.000+00:00",
+      "updatedAt": "2025-04-01T12:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b581c7463f8a7b5cdab1" },
+      "name": "New Arrival Minimalist Design Watch",
+      "slug": "new-arrival-minimalist-design-watch",
+      "description": "Clean lines and a simple dial make this watch a modern classic.",
+      "price": 4200,
+      "category": { "$oid": "686688a9fe6f555781279857" },
+      "quantity": 18,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-06-28T14:00:00.000+00:00",
+      "updatedAt": "2025-07-03T09:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b582c7463f8a7b5cdab2" },
+      "name": "Couple's Engravable Stainless Steel Watches",
+      "slug": "couples-engravable-stainless-steel-watches",
+      "description": "Personalize your love with these elegant watches, perfect for a special gift.",
+      "price": 6800,
+      "category": { "$oid": "686688b0fe6f55578127985c" },
+      "quantity": 12,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-05-01T10:00:00.000+00:00",
+      "updatedAt": "2025-06-01T13:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b583c7463f8a7b5cdab3" },
+      "name": "Best Seller Dive Watch with Rotating Bezel",
+      "slug": "best-seller-dive-watch-with-rotating-bezel",
+      "description": "A robust and reliable dive watch, a favorite among water sports enthusiasts.",
+      "price": 8900,
+      "category": { "$oid": "6866a9f8006440e64317b58f" },
+      "quantity": 22,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-02-10T11:00:00.000+00:00",
+      "updatedAt": "2025-07-01T15:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b584c7463f8a7b5cdab4" },
+      "name": "Vintage Desk Clock with Roman Numerals",
+      "slug": "vintage-desk-clock-with-roman-numerals",
+      "description": "A timeless piece for your desk or mantel, adding a touch of classic charm.",
+      "price": 3500,
+      "category": { "$oid": "6866aa05006440e64317b594" },
+      "quantity": 8,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-01-20T16:00:00.000+00:00",
+      "updatedAt": "2025-05-20T10:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b585c7463f8a7b5cdab5" },
+      "name": "Women's Mesh Strap Dress Watch",
+      "slug": "womens-mesh-strap-dress-watch",
+      "description": "Sophisticated and comfortable, perfect for formal events or daily wear.",
+      "price": 4100,
+      "category": { "$oid": "68668891fe6f555781279852" },
+      "quantity": 28,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-06-05T10:00:00.000+00:00",
+      "updatedAt": "2025-06-30T14:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b586c7463f8a7b5cdab6" },
+      "name": "Men's Automatic Skeleton Watch",
+      "slug": "mens-automatic-skeleton-watch",
+      "description": "Showcasing intricate internal mechanisms, a true work of art for your wrist.",
+      "price": 12000,
+      "category": { "$oid": "6866887dfe6f55578127984b" },
+      "quantity": 10,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-03-20T12:00:00.000+00:00",
+      "updatedAt": "2025-06-15T11:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b587c7463f8a7b5cdab7" },
+      "name": "Kids' Digital Sports Watch with Stopwatch",
+      "slug": "kids-digital-sports-watch-with-stopwatch",
+      "description": "Durable and fun, perfect for young athletes and outdoor play.",
+      "price": 1500,
+      "category": { "$oid": "6864f1c481685d30ea97a63c" },
+      "quantity": 38,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-02-01T09:00:00.000+00:00",
+      "updatedAt": "2025-03-01T10:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b588c7463f8a7b5cdab8" },
+      "name": "New Arrival Solar Powered Eco-Watch",
+      "slug": "new-arrival-solar-powered-eco-watch",
+      "description": "Harness the power of light with this eco-friendly and stylish timepiece.",
+      "price": 6500,
+      "category": { "$oid": "686688a9fe6f555781279857" },
+      "quantity": 17,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-06-25T11:00:00.000+00:00",
+      "updatedAt": "2025-07-02T10:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b589c7463f8a7b5cdab9" },
+      "name": "Couple's Minimalist Wristwatches",
+      "slug": "couples-minimalist-wristwatches",
+      "description": "Simple yet elegant, these watches are designed for couples who appreciate understated style.",
+      "price": 4800,
+      "category": { "$oid": "686688b0fe6f55578127985c" },
+      "quantity": 19,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-04-20T14:00:00.000+00:00",
+      "updatedAt": "2025-05-20T16:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b58ac7463f8a7b5cdaba" },
+      "name": "Best Seller Classic Analog Watch",
+      "slug": "best-seller-classic-analog-watch",
+      "description": "A timeless design that never goes out of style, our top-selling analog watch.",
+      "price": 3000,
+      "category": { "$oid": "6866a9f8006440e64317b58f" },
+      "quantity": 55,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-01-01T10:00:00.000+00:00",
+      "updatedAt": "2025-07-03T11:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b58bc7463f8a7b5cdabb" },
+      "name": "Large Display Digital Wall Clock",
+      "slug": "large-display-digital-wall-clock",
+      "description": "Easy to read from a distance, perfect for offices or large rooms.",
+      "price": 2500,
+      "category": { "$oid": "6866aa05006440e64317b594" },
+      "quantity": 12,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-03-05T14:00:00.000+00:00",
+      "updatedAt": "2025-06-05T16:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b58cc7463f8a7b5cdabc" },
+      "name": "Women's Ceramic Bracelet Watch",
+      "slug": "womens-ceramic-bracelet-watch",
+      "description": "Luxurious and scratch-resistant, a sophisticated accessory for any ensemble.",
+      "price": 9500,
+      "category": { "$oid": "68668891fe6f555781279852" },
+      "quantity": 15,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-05-15T11:00:00.000+00:00",
+      "updatedAt": "2025-06-28T13:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b58dc7463f8a7b5cdabd" },
+      "name": "Men's Dress Watch with Sapphire Crystal",
+      "slug": "mens-dress-watch-with-sapphire-crystal",
+      "description": "Elegance meets durability with this scratch-resistant sapphire crystal watch.",
+      "price": 11000,
+      "category": { "$oid": "6866887dfe6f55578127984b" },
+      "quantity": 10,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-04-05T10:00:00.000+00:00",
+      "updatedAt": "2025-05-25T12:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b58ec7463f8a7b5cdabe" },
+      "name": "Kids' Smartwatch with GPS Tracker",
+      "slug": "kids-smartwatch-with-gps-tracker",
+      "description": "Keep track of your child's location with this fun and functional smartwatch.",
+      "price": 3500,
+      "category": { "$oid": "6864f1c481685d30ea97a63c" },
+      "quantity": 25,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-03-15T11:00:00.000+00:00",
+      "updatedAt": "2025-04-15T14:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b58fc7463f8a7b5cdabf" },
+      "name": "New Arrival Hybrid Smartwatch",
+      "slug": "new-arrival-hybrid-smartwatch",
+      "description": "Combines classic analog style with smart features for the best of both worlds.",
+      "price": 7800,
+      "category": { "$oid": "686688a9fe6f555781279857" },
+      "quantity": 14,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-06-20T09:00:00.000+00:00",
+      "updatedAt": "2025-07-01T10:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b590c7463f8a7b5cdac0" },
+      "name": "Couple's Luxury Diamond Accent Watches",
+      "slug": "couples-luxury-diamond-accent-watches",
+      "description": "Celebrate your love with these exquisite watches, adorned with subtle diamond accents.",
+      "price": 14000,
+      "category": { "$oid": "686688b0fe6f55578127985c" },
+      "quantity": 7,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-05-05T13:00:00.000+00:00",
+      "updatedAt": "2025-06-05T15:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b591c7463f8a7b5cdac1" },
+      "name": "Best Seller Pilot's Chronograph Watch",
+      "slug": "best-seller-pilots-chronograph-watch",
+      "description": "Precision and style for aviation enthusiasts, a top choice among our customers.",
+      "price": 10500,
+      "category": { "$oid": "6866a9f8006440e64317b58f" },
+      "quantity": 18,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-02-20T10:00:00.000+00:00",
+      "updatedAt": "2025-07-02T14:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b592c7463f8a7b5cdac2" },
+      "name": "Digital Alarm Clock with Temperature Display",
+      "slug": "digital-alarm-clock-with-temperature-display",
+      "description": "A versatile alarm clock with a clear display and added temperature feature.",
+      "price": 1800,
+      "category": { "$oid": "6866aa05006440e64317b594" },
+      "quantity": 20,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-04-10T09:00:00.000+00:00",
+      "updatedAt": "2025-06-20T10:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b593c7463f8a7b5cdac3" },
+      "name": "Women's Vintage Style Leather Watch",
+      "slug": "womens-vintage-style-leather-watch",
+      "description": "A charming watch with a retro appeal, perfect for a classic look.",
+      "price": 3200,
+      "category": { "$oid": "68668891fe6f555781279852" },
+      "quantity": 22,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-05-01T15:00:00.000+00:00",
+      "updatedAt": "2025-06-10T17:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b594c7463f8a7b5cdac4" },
+      "name": "Men's Sports Watch with Rubber Strap",
+      "slug": "mens-sports-watch-with-rubber-strap",
+      "description": "Designed for performance and comfort, ideal for active lifestyles.",
+      "price": 4500,
+      "category": { "$oid": "6866887dfe6f55578127984b" },
+      "quantity": 30,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-04-25T10:00:00.000+00:00",
+      "updatedAt": "2025-05-30T12:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b595c7463f8a7b5cdac5" },
+      "name": "Kids' Projector Watch with 24 Images",
+      "slug": "kids-projector-watch-with-24-images",
+      "description": "A fun watch that projects images, keeping kids entertained.",
+      "price": 1800,
+      "category": { "$oid": "6864f1c481685d30ea97a63c" },
+      "quantity": 33,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-02-15T13:00:00.000+00:00",
+      "updatedAt": "2025-03-15T15:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b596c7463f8a7b5cdac6" },
+      "name": "New Arrival Automatic Self-Winding Watch",
+      "slug": "new-arrival-automatic-self-winding-watch",
+      "description": "Experience the convenience of a watch powered by your own movement.",
+      "price": 8500,
+      "category": { "$oid": "686688a9fe6f555781279857" },
+      "quantity": 11,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-06-18T10:00:00.000+00:00",
+      "updatedAt": "2025-07-04T12:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b597c7463f8a7b5cdac7" },
+      "name": "Couple's Smart Fitness Tracker Watches",
+      "slug": "couples-smart-fitness-tracker-watches",
+      "description": "Stay fit together with these smart watches that track your activity.",
+      "price": 9800,
+      "category": { "$oid": "686688b0fe6f55578127985c" },
+      "quantity": 13,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-05-10T11:00:00.000+00:00",
+      "updatedAt": "2025-06-10T14:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b598c7463f8a7b5cdac8" },
+      "name": "Best Seller Waterproof Sports Watch",
+      "slug": "best-seller-waterproof-sports-watch",
+      "description": "Our most robust and water-resistant sports watch, perfect for any adventure.",
+      "price": 5200,
+      "category": { "$oid": "6866a9f8006440e64317b58f" },
+      "quantity": 40,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-01-25T14:00:00.000+00:00",
+      "updatedAt": "2025-07-03T09:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b599c7463f8a7b5cdac9" },
+      "name": "Large Decorative Wall Clock",
+      "slug": "large-decorative-wall-clock",
+      "description": "A statement piece for your wall, combining functionality with artistic design.",
+      "price": 6000,
+      "category": { "$oid": "6866aa05006440e64317b594" },
+      "quantity": 9,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-03-25T16:00:00.000+00:00",
+      "updatedAt": "2025-06-25T11:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b59ac7463f8a7b5cdaca" },
+      "name": "Women's Bracelet Watch with Crystal Bezel",
+      "slug": "womens-bracelet-watch-with-crystal-bezel",
+      "description": "Sparkling crystals adorn the bezel of this elegant bracelet watch.",
+      "price": 5800,
+      "category": { "$oid": "68668891fe6f555781279852" },
+      "quantity": 20,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-05-20T10:00:00.000+00:00",
+      "updatedAt": "2025-07-01T14:00:00.000+00:00",
+      "__v": 0
+    },
+    {
+      "_id": { "$oid": "6687b59bc7463f8a7b5cdacb" },
+      "name": "Men's Digital Sports Watch with GPS",
+      "slug": "mens-digital-sports-watch-with-gps",
+      "description": "Track your runs and adventures with this advanced GPS-enabled sports watch.",
+      "price": 7200,
+      "category": { "$oid": "6866887dfe6f55578127984b" },
+      "quantity": 16,
+      "photo": {
+        "data": { "$binary": { "base64": "UklGRiIAAABXRUJQVlA4IIYAAAAwAQCdASoBAAEAAgA0JaQAA3AA/vuAAA==", "subType": "00" } },
+        "contentType": "image/webp"
+      },
+      "createdAt": "2025-04-10T11:00:00.000+00:00",
+      "updatedAt": "2025-06-01T13:00:00.000+00:00",
+      "__v": 0
+    }
+  ]
+  

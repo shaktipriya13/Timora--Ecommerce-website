@@ -1,7 +1,7 @@
 import express from "express";
 import {
 
-    createProductController, getProductController, updateProductController, getSingleProductController, productPhotoController, deleteProductController
+    createProductController, getProductController, updateProductController, getSingleProductController, productPhotoController, deleteProductController, productFiltersController, productCountController, productListController
 
 } from "../controllers/product.controller.js";
 import { isAdmin, requireSignIn } from "../middlewares/auth.middleware.js";
@@ -41,14 +41,14 @@ router.get("/product-photo/:pid", productPhotoController);
 router.delete("/delete-product/:pid", deleteProductController);
 // pid humne name kia ha for product id, but actually id hi hota ha database me
 
-// //filter product
-// router.post("/product-filters", productFiltersController);
+//filter product
+router.post("/product-filters", productFiltersController);
 
-// //product count
-// router.get("/product-count", productCountController);
+//product count
+router.get("/product-count", productCountController);
 
-// //product per page
-// router.get("/product-list/:page", productListController);
+//product per page
+router.get("/product-list/:page", productListController);
 
 // //search product
 // router.get("/search/:keyword", searchProductController);
