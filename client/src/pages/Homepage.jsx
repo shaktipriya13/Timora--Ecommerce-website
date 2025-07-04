@@ -10,7 +10,8 @@ import { Prices } from "../components/Prices.js";
 import axios from "axios";
 import Layout from "./../components/Layout/Layout";
 import { AiOutlineReload } from "react-icons/ai";
-import "../styles/Homepage.css";
+// import "../styles/Homepage.css";
+import "../styles/Homepage2.css";
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -119,24 +120,139 @@ const HomePage = () => {
     }, [page]);
 
     return (
+        // <Layout
+        //     title={"Timora - Your Trusted Online Shopping Partner"}
+        //     description={
+        //         "Explore top-quality products at affordable prices on Timora. Enjoy secure payments, fast delivery, and 24/7 customer support."
+        //     }
+        //     keywords={"Timora, online shopping, ecommerce, best prices, secure checkout, fast delivery"}
+        //     author={"Shakti Priya"}
+        // >
+        //     {/* Banner Image */}
+        //     <img
+        //         src="/images/banner.png"
+        //         className="banner-img"
+        //         alt="bannerimage"
+        //         width={"100%"}
+        //     />
+
+        //     <div className="container-fluid row mt-3 home-page">
+        //         {/* Left Filter Sidebar */}
+        //         <div className="col-md-3 filters">
+        //             <h4 className="text-center">Filter By Category</h4>
+        //             <div className="d-flex flex-column">
+        //                 {categories?.map((c) => (
+        //                     <Checkbox
+        //                         key={c._id}
+        //                         onChange={(e) => handleFilter(e.target.checked, c._id)}
+        //                     >
+        //                         {c.name}
+        //                     </Checkbox>
+        //                 ))}
+        //             </div>
+
+        //             <h4 className="text-center mt-4">Filter By Price</h4>
+        //             <div className="d-flex flex-column">
+        //                 <Radio.Group onChange={(e) => setRadio(e.target.value)}>
+        //                     {Prices?.map((p) => (
+        //                         <div key={p._id}>
+        //                             <Radio value={p.array}>{p.name}</Radio>
+        //                         </div>
+        //                     ))}
+        //                 </Radio.Group>
+        //             </div>
+
+        //             <div className="d-flex flex-column mt-3">
+        //                 <button
+        //                     className="btn btn-danger"
+        //                     onClick={() => window.location.reload()}
+        //                 >
+        //                     RESET FILTERS
+        //                 </button>
+        //             </div>
+        //         </div>
+
+        //         {/* Right Product Grid */}
+        //         <div className="col-md-9">
+        //             <h1 className="text-center">All Products</h1>
+        //             <div className="d-flex flex-wrap">
+        //                 {products?.map((p) => (
+        //                     <div className="card m-2" key={p._id} style={{ width: "18rem" }}>
+        //                         <img
+        //                             src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+        //                             className="card-img-top"
+        //                             alt={p.name}
+        //                         />
+        //                         <div className="card-body">
+        //                             <div className="card-name-price">
+        //                                 <h5 className="card-title">{p.name}</h5>
+        //                                 <h6 className="card-title card-price">
+        //                                     ₹ {p.price.toLocaleString("en-IN")}
+        //                                 </h6>
+        //                             </div>
+        //                             <p className="card-text">
+        //                                 {p.description.substring(0, 60)}...
+        //                             </p>
+        //                             <div className="card-name-price">
+        //                                 <button
+        //                                     className="btn btn-info ms-1"
+        //                                     onClick={() => navigate(`/product/${p.slug}`)}
+        //                                 >
+        //                                     More Details
+        //                                 </button>
+        //                                 {/* <button
+        //                                     className="btn btn-dark ms-1"
+        //                                     onClick={() => {
+        //                                         setCart([...cart, p]);
+        //                                         localStorage.setItem("cart", JSON.stringify([...cart, p]));
+        //                                         toast.success("Item Added to cart");
+        //                                     }}
+        //                                 >
+        //                                     ADD TO CART
+        //                                 </button> */}
+        //                             </div>
+        //                         </div>
+        //                     </div>
+        //                 ))}
+        //             </div>
+
+        //             {/* Load More Button */}
+        //             <div className="m-2 p-3">
+        //                 {products && products.length < total && (
+        //                     <button
+        //                         className="btn loadmore"
+        //                         onClick={(e) => {
+        //                             e.preventDefault();
+        //                             setPage(page + 1);
+        //                         }}
+        //                     >
+        //                         {loading ? "Loading ..." : <> Load More <AiOutlineReload /> </>}
+        //                     </button>
+        //                 )}
+        //             </div>
+        //         </div>
+        //     </div>
+        // </Layout>
+
         <Layout
-            title={"Timora - Your Trusted Online Shopping Partner"}
+            title={"Timora - Your Trusted Online Watch Store"}
             description={
-                "Explore top-quality products at affordable prices on Timora. Enjoy secure payments, fast delivery, and 24/7 customer support."
+                "Discover premium watches at Timora. Shop luxury, sport, and smartwatches with fast delivery, secure checkout, and 24/7 support."
             }
-            keywords={"Timora, online shopping, ecommerce, best prices, secure checkout, fast delivery"}
+            keywords={"watches, luxury watches, Timora, smartwatches, online shopping"}
             author={"Shakti Priya"}
         >
             {/* Banner Image */}
             <img
-                src="/images/banner.png"
+                src="/images/b2.png"
                 className="banner-img"
-                alt="bannerimage"
-                width={"100%"}
+                alt="Watch Store Banner"
+                width="100%"
+                height="800px" // or any desired value
             />
 
             <div className="container-fluid row mt-3 home-page">
-                {/* Left Filter Sidebar */}
+                {/* Filter Sidebar */}
                 <div className="col-md-3 filters">
                     <h4 className="text-center">Filter By Category</h4>
                     <div className="d-flex flex-column">
@@ -171,52 +287,40 @@ const HomePage = () => {
                     </div>
                 </div>
 
-                {/* Right Product Grid */}
+                {/* Product Grid */}
                 <div className="col-md-9">
-                    <h1 className="text-center">All Products</h1>
-                    <div className="d-flex flex-wrap">
+                    <h1 className="text-center mb-4">All Watches</h1>
+                    <div className="d-flex flex-wrap justify-content-center">
                         {products?.map((p) => (
-                            <div className="card m-2" key={p._id} style={{ width: "18rem" }}>
+                            <div className="watch-card m-3" key={p._id}>
                                 <img
                                     src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
-                                    className="card-img-top"
                                     alt={p.name}
+                                    className="watch-img"
                                 />
-                                <div className="card-body">
-                                    <div className="card-name-price">
-                                        <h5 className="card-title">{p.name}</h5>
-                                        <h6 className="card-title card-price">
-                                            ₹ {p.price.toLocaleString("en-IN")}
-                                        </h6>
-                                    </div>
-                                    <p className="card-text">
+                                <div className="watch-card-body">
+                                    <h5 className="watch-title">{p.name}</h5>
+                                    <p className="watch-description">
                                         {p.description.substring(0, 60)}...
                                     </p>
-                                    <div className="card-name-price">
+                                    <div className="watch-bottom">
+                                        <span className="watch-price">
+                                            ₹ {p.price.toLocaleString("en-IN")}
+                                        </span>
                                         <button
-                                            className="btn btn-info ms-1"
-                                            onClick={() => navigate(`/product/${p.slug}`)}
+                                            className="watch-more-btn"
+                                            onClick={() => (window.location.href = `/product/${p.slug}`)}
                                         >
                                             More Details
                                         </button>
-                                        {/* <button
-                                            className="btn btn-dark ms-1"
-                                            onClick={() => {
-                                                setCart([...cart, p]);
-                                                localStorage.setItem("cart", JSON.stringify([...cart, p]));
-                                                toast.success("Item Added to cart");
-                                            }}
-                                        >
-                                            ADD TO CART
-                                        </button> */}
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    {/* Load More Button */}
-                    <div className="m-2 p-3">
+                    {/* Load More */}
+                    <div className="m-2 p-3 text-center">
                         {products && products.length < total && (
                             <button
                                 className="btn loadmore"
@@ -232,6 +336,7 @@ const HomePage = () => {
                 </div>
             </div>
         </Layout>
+
     );
 };
 

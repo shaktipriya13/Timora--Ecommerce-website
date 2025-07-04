@@ -1,6 +1,6 @@
 import productModel from "../models/product.model.js";
 import categoryModel from "../models/categroy.model.js";
-// import orderModel from "../models/order.model.js";
+import orderModel from "../models/order.model.js";
 
 import fs from "fs";//we have imported fs module to read the file from the path
 // The fs module in Node.js stands for File System.
@@ -251,7 +251,7 @@ export const productCountController = async (req, res) => {
 // product list base on page
 export const productListController = async (req, res) => {
     try {
-        const perPage = 12; // number of products per page
+        const perPage = 9; // number of products per page
         const page = req.params.page ? req.params.page : 1;
         const products = await productModel
             // the below operations passed are called as queries

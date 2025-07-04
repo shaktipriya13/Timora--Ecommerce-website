@@ -1,7 +1,7 @@
 import express from "express";
 import {
 
-    createProductController, getProductController, updateProductController, getSingleProductController, productPhotoController, deleteProductController, productFiltersController, productCountController, productListController, searchProductController, realtedProductController
+    createProductController, getProductController, updateProductController, getSingleProductController, productPhotoController, deleteProductController, productFiltersController, productCountController, productListController, searchProductController, realtedProductController, productCategoryController
 
 } from "../controllers/product.controller.js";
 import { isAdmin, requireSignIn } from "../middlewares/auth.middleware.js";
@@ -57,8 +57,8 @@ router.get("/search/:keyword", searchProductController);
 //similar product
 router.get("/related-product/:pid/:cid", realtedProductController);
 
-// //category wise product
-// router.get("/product-category/:slug", productCategoryController);
+//category wise product
+router.get("/product-category/:slug", productCategoryController);
 
 // //payments routes
 // //token
