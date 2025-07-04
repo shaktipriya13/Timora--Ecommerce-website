@@ -19,6 +19,8 @@ import Profile from './pages/user/Profile';
 import ForgotPasssword from './pages/Auth/ForgotPassword';
 import Products from './pages/Admin/Products';
 import UpdateProduct from './pages/Admin/UpdateProduct';
+import Search from './pages/Search';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -28,6 +30,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Homepage />} />
+        <Route path='/product/:slug' element={<ProductDetails />} />
 
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
@@ -43,6 +46,7 @@ function App() {
           <Route path="admin/products" element={<Products />} />
         </Route>
         <Route path='/register' element={<Register />} />
+        <Route path='/search' element={<Search />} />
         <Route path='/login' element={<Login />} />
         <Route path='/forgot-password' element={<ForgotPasssword />} />
         <Route path='/about' element={<About />} />

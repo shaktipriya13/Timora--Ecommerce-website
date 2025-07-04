@@ -283,7 +283,11 @@ export const searchProductController = async (req, res) => {
         const { keyword } = req.params;
         const resutls = await productModel
             .find({
+                // MongoDB .find() query 
+                // we are searching for products that match the keyword in either name or description
+                // $or is used to specify multiple conditions, if any of the conditions match, the document will be included in the results
                 $or: [
+                    // $options: "i" makes the search case-insensitive (i stands for "ignore case").
                     { name: { $regex: keyword, $options: "i" } },
                     { description: { $regex: keyword, $options: "i" } },
                 ],
@@ -308,10 +312,12 @@ export const realtedProductController = async (req, res) => {
             .find({
                 category: cid,
                 _id: { $ne: pid },
+                // In MongoDB queries, $ne means: not equal to
             })
             .select("-photo")
             .limit(3)
-            .populate("category");
+            .populate("category");//we will be showing only 3 related products 
+        // populate is used to get the category name from the category model, as we have stored only the id of the category in the product model, pura data show hoga populate se
         res.status(200).send({
             success: true,
             products,

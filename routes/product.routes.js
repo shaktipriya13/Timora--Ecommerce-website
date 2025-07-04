@@ -1,7 +1,7 @@
 import express from "express";
 import {
 
-    createProductController, getProductController, updateProductController, getSingleProductController, productPhotoController, deleteProductController, productFiltersController, productCountController, productListController
+    createProductController, getProductController, updateProductController, getSingleProductController, productPhotoController, deleteProductController, productFiltersController, productCountController, productListController, searchProductController, realtedProductController
 
 } from "../controllers/product.controller.js";
 import { isAdmin, requireSignIn } from "../middlewares/auth.middleware.js";
@@ -50,11 +50,12 @@ router.get("/product-count", productCountController);
 //product per page
 router.get("/product-list/:page", productListController);
 
-// //search product
-// router.get("/search/:keyword", searchProductController);
+//search product
+router.get("/search/:keyword", searchProductController);
+// we are searching product by keyword, so we will get the keyword from the paramss
 
-// //similar product
-// router.get("/related-product/:pid/:cid", realtedProductController);
+//similar product
+router.get("/related-product/:pid/:cid", realtedProductController);
 
 // //category wise product
 // router.get("/product-category/:slug", productCategoryController);

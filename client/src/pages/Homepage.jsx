@@ -120,11 +120,11 @@ const HomePage = () => {
 
     return (
         <Layout
-            title={"ShopMitra - Your Trusted Online Shopping Partner"}
+            title={"Timora - Your Trusted Online Shopping Partner"}
             description={
-                "Explore top-quality products at affordable prices on ShopMitra. Enjoy secure payments, fast delivery, and 24/7 customer support."
+                "Explore top-quality products at affordable prices on Timora. Enjoy secure payments, fast delivery, and 24/7 customer support."
             }
-            keywords={"ShopMitra, online shopping, ecommerce, best prices, secure checkout, fast delivery"}
+            keywords={"Timora, online shopping, ecommerce, best prices, secure checkout, fast delivery"}
             author={"Shakti Priya"}
         >
             {/* Banner Image */}

@@ -4,9 +4,9 @@ import Layout from "./../components/Layout/Layout";
 const About = () => {
   return (
     <Layout
-      title={"About us - ShopMitra"}
-      description={"Discover ShopMitra’s mission, values, and our commitment to delivering an exceptional online shopping experience."}
-      keywords={"About ShopMitra, ecommerce company, online store vision, shopping goals, mission statement"}
+      title={"About us - Timora"}
+      description={"Discover Timora’s mission, values, and our commitment to delivering an exceptional online shopping experience."}
+      keywords={"About Timora, ecommerce company, online store vision, shopping goals, mission statement"}
       author={"Shakti Priya"}
     >
       <div className="row contactus ">
@@ -19,8 +19,8 @@ const About = () => {
         </div>
         <div className="col-md-4">
           <p className="text-justify mt-2">
-            Welcome to <strong>ShopMitra</strong> !
-            <br /> — your trusted partner in smart shopping. At ShopMitra, we believe shopping should be joyful, effortless, and tailored to your lifestyle. From everyday essentials to premium picks, our curated collections bring you the best of quality, value, and variety — all in one place. With a commitment to secure payments, fast delivery, and responsive support, we ensure every shopping experience is smooth and satisfying. Join the growing family of happy customers and let ShopMitra make your everyday shopping smarter and simpler.
+            Welcome to <strong>Timora</strong> !
+            <br /> — your trusted partner in smart shopping. At Timora, we believe shopping should be joyful, effortless, and tailored to your lifestyle. From everyday essentials to premium picks, our curated collections bring you the best of quality, value, and variety — all in one place. With a commitment to secure payments, fast delivery, and responsive support, we ensure every shopping experience is smooth and satisfying. Join the growing family of happy customers and let Timora make your everyday shopping smarter and simpler.
           </p>
 
         </div>
