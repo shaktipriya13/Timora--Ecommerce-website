@@ -88,9 +88,9 @@ const ProductDetails = () => {
                                 <div className="watch-card-body">
                                     <h3 className="watch-name">{p.name}</h3>
                                     <p className="watch-price">
-                                        {p.price.toLocaleString("en-US", {
+                                        {p.price.toLocaleString("en-IN", {
                                             style: "currency",
-                                            currency: "USD",
+                                            currency: "INR",
                                         })}
                                     </p>
                                     <p className="watch-desc">{p.description.substring(0, 60)}...</p>
