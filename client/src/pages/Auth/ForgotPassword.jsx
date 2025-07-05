@@ -25,8 +25,10 @@ const ForgotPasssword = () => {
                 answer,
             });
             if (res && res.data.success) {
-                toast.success(res.data && res.data.message);
-
+                setTimeout(() => {
+                    // toast.success(res.data && res.data.message);
+                    toast.success("Password updated successfully, Please Login again.");
+                }, 500);
                 navigate("/login");
             } else {
                 toast.error(res.data.message);

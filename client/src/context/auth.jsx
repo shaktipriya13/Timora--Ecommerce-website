@@ -1,3 +1,4 @@
+//This is a React Context setup for managing user authentication(login / logout) throughout your app.
 import { useState, useEffect, useContext, createContext } from "react";
 import axios from "axios";
 

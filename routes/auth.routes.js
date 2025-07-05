@@ -1,5 +1,5 @@
 import express from "express";
-import { loginController, registerController, testController, forgotPasswordController } from '../controllers/auth.controller.js';
+import { loginController, registerController, testController, forgotPasswordController, updateProfileController } from '../controllers/auth.controller.js';
 import { isAdmin, requireSignIn } from "../middlewares/auth.middleware.js";
 
 //router object
@@ -31,5 +31,11 @@ router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
     // here we wrote the controller directly as it was of just 1 line
     // agar response ok:true rha then only we will be able to access the private route
 });
+
+
+// update profile
+router.put("/profile", requireSignIn, updateProfileController);
+
+
 
 export default router;

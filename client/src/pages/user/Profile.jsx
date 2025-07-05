@@ -16,6 +16,7 @@ const Profile = () => {
 
     //get user data
     useEffect(() => {
+        //useEffect hook is used to get the previous data in the initial time when the page loads
         const { email, name, phone, address } = auth?.user;
         setName(name);
         setPhone(phone);
@@ -24,31 +25,64 @@ const Profile = () => {
     }, [auth?.user]);
 
     // form function
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         const { data } = await axios.put("http://localhost:8080/api/v1/auth/profile", {
+    //             name,
+    //             email,
+    //             password,
+    //             phone,
+    //             address,
+    //         });
+    //         if (data?.error) {
+    //             toast.error(data?.error);
+    //         } else {
+    //             setAuth({ ...auth, user: data?.updatedUser });
+    //             let ls = localStorage.getItem("auth");
+    //             ls = JSON.parse(ls);
+    //             ls.user = data.updatedUser;
+    //             localStorage.setItem("auth", JSON.stringify(ls));
+    //             toast.success("Profile Updated Successfully");
+    //         }
+    //     } catch (error) {
+    //         console.log(error);
+    //         toast.error("Something went wrong");
+    //     }
+    // };
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.put("/api/v1/auth/profile", {
+            const { data } = await axios.put("http://localhost:8080/api/v1/auth/profile", {
                 name,
                 email,
                 password,
                 phone,
                 address,
             });
-            if (data?.errro) {
-                toast.error(data?.error);
+
+            if (!data?.success) {
+                toast.error(data?.error || "Invalid request");
             } else {
                 setAuth({ ...auth, user: data?.updatedUser });
+
                 let ls = localStorage.getItem("auth");
                 ls = JSON.parse(ls);
                 ls.user = data.updatedUser;
                 localStorage.setItem("auth", JSON.stringify(ls));
+
                 toast.success("Profile Updated Successfully");
             }
         } catch (error) {
             console.log(error);
-            toast.error("Something went wrong");
+            if (error.response?.status === 400) {
+                toast.error("Invalid input data!");
+            } else {
+                toast.error("Something went wrong");
+            }
         }
     };
+
     return (
         <Layout title={"Your Profile"}>
             <div className="container-fluid m-3 p-3 dashboard">
@@ -59,7 +93,7 @@ const Profile = () => {
                     <div className="col-md-8">
                         <div className="form-container" style={{ marginTop: "-40px" }}>
                             <form onSubmit={handleSubmit}>
-                                <h4 className="title">USER PROFILE</h4>
+                                <h4 className="title">YOUR PROFILE</h4>
                                 <div className="mb-3">
                                     <input
                                         type="text"

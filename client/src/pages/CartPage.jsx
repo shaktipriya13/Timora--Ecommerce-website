@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 // import DropIn from "braintree-web-drop-in-react";
 import { AiFillWarning } from "react-icons/ai";
 import axios from "axios";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 import "../styles/CartStyles.css";
 
 const CartPage = () => {
@@ -24,10 +24,11 @@ const CartPage = () => {
             cart?.map((item) => {
                 total = total + item.price;
             });
-            return total.toLocaleString("en-US", {
+            return total.toLocaleString("en-IN", {
                 style: "currency",
-                currency: "USD",
-            });
+                currency: "INR",
+            }).replace("₹", "₹ ");
+
         } catch (error) {
             console.log(error);
         }
@@ -51,6 +52,9 @@ const CartPage = () => {
 
             // Step 5: Also update the cart in localStorage so that the change persists across page reloads
             localStorage.setItem("cart", JSON.stringify(myCart));
+            setTimeout(() => {
+                toast.success("Item removed from Cart successfully.")
+            }, 100);
         } catch (error) {
             // Step 6: If any error occurs, log it in the console for debugging
             console.log(error);
@@ -146,18 +150,19 @@ const CartPage = () => {
                         </div>
 
                         {/* Right: Summary */}
-                        <div className="col-md-5">
+                        <div className="col-md-5 text-center">
                             <div className="card shadow sticky-summary">
                                 <div className="card-body">
                                     <h4 className="card-title mb-3">Cart Summary</h4>
                                     <p className="card-text mb-2 text-muted">Total | Checkout | Payment</p>
                                     <hr />
-                                    <h5>Total: ₹ {totalPrice()}</h5>
+                                    <h5>Total: {totalPrice()}</h5>
 
                                     {auth?.user?.address ? (
                                         <div className="my-3 shipping-box">
                                             <h6>Shipping Address</h6>
                                             <p>{auth?.user?.address}</p>
+                                            {/* this auth is coming from the authContext */}
                                             <button
                                                 className="btn btn-sm btn-outline-primary"
                                                 onClick={() => navigate("/dashboard/user/profile")}
@@ -223,3 +228,5 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
+

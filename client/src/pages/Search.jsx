@@ -3,7 +3,7 @@ import Layout from "./../components/Layout/Layout";
 import { useSearch } from "../context/search";
 import { useCart } from "../context/cart"; // adjust path as needed
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
 const Search = () => {
     const [values, setValues] = useSearch();
     return (
