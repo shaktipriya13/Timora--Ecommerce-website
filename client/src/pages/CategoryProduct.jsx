@@ -59,6 +59,12 @@ const CategoryProduct = () => {
                                             >
                                                 More Details
                                             </button>
+                                            <button
+                                                className="btn btn-info ms-1"
+                                                onClick={() => navigate(`/product/${p.slug}`)}
+                                            >
+                                                Add to Cart
+                                            </button>
                                             {/* <button
                     className="btn btn-dark ms-1"
                     onClick={() => {
