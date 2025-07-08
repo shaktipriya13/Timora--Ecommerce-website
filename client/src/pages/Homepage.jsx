@@ -29,7 +29,7 @@ const HomePage = () => {
     // Get all categories
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get("http://localhost:8080/api/v1/category/get-category");
+            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/category/get-category");
             if (data?.success) {
                 setCategories(data?.category);
             }
@@ -41,7 +41,7 @@ const HomePage = () => {
     // Get total products count
     const getTotal = async () => {
         try {
-            const { data } = await axios.get("http://localhost:8080/api/v1/product/product-count");
+            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/product/product-count");
             setTotal(data?.total);
         } catch (error) {
             console.log(error);
@@ -52,7 +52,7 @@ const HomePage = () => {
     const getAllProducts = async () => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`http://localhost:8080/api/v1/product/product-list/${page}`);
+            const { data } = await axios.get(`https://timora-backend-un9e.onrender.com/api/v1/product/product-list/${page}`);
             setLoading(false);
             setProducts(data.products);
         } catch (error) {
@@ -65,7 +65,7 @@ const HomePage = () => {
     const loadMore = async () => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`http://localhost:8080/api/v1/product/product-list/${page}`);
+            const { data } = await axios.get(`https://timora-backend-un9e.onrender.com/api/v1/product/product-list/${page}`);
             setLoading(false);
             setProducts([...products, ...data?.products]);
         } catch (error) {
@@ -89,7 +89,7 @@ const HomePage = () => {
     const filterProduct = async () => {
         try {
             // following is an api call
-            const { data } = await axios.post("http://localhost:8080/api/v1/product/product-filters", {
+            const { data } = await axios.post("https://timora-backend-un9e.onrender.com/api/v1/product/product-filters", {
                 checked,
                 radio,
             });
@@ -181,7 +181,7 @@ const HomePage = () => {
         //                 {products?.map((p) => (
         //                     <div className="card m-2" key={p._id} style={{ width: "18rem" }}>
         //                         <img
-        //                             src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+        //                             src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
         //                             className="card-img-top"
         //                             alt={p.name}
         //                         />
@@ -315,7 +315,7 @@ const HomePage = () => {
                         {products?.map((p) => (
                             <div className="watch-card" key={p._id}>
                                 <img
-                                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                                    src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
                                     alt={p.name}
                                     className="watch-img"
                                 />
@@ -452,7 +452,7 @@ export default HomePage;
 //                         {products?.map((p) => (
 //                             <div className="watch-card m-3" key={p._id}>
 //                                 <img
-//                                     src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+//                                     src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
 //                                     alt={p.name}
 //                                     className="watch-img"
 //                                 />

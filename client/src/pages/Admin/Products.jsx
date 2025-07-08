@@ -12,7 +12,7 @@
 //     //getall products
 //     const getAllProducts = async () => {
 //         try {
-//             const { data } = await axios.get("http://localhost:8080/api/v1/product/get-product");
+//             const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/product/get-product");
 //             // backend me api alraeady we have defined which we are calling at here
 //             setProducts(data.products);
 //         } catch (error) {
@@ -49,7 +49,7 @@
 //                                         // The <img> tag automatically makes a GET request to the src URL. So no need to use axios here.
 //                                         // The src is the URL of the product image, which is fetched from the backend.
 //                                         // The URL is constructed using the product's ID (p._id) to fetch the specific product's image.
-//                                         src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+//                                         src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
 //                                         className="card-img-top"
 //                                         alt={p.name}
 //                                     />
@@ -88,7 +88,7 @@ const Products = () => {
     // Get total products count
     const getTotal = async () => {
         try {
-            const { data } = await axios.get("http://localhost:8080/api/v1/product/product-count");
+            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/product/product-count");
             setTotal(data?.total);
         } catch (error) {
             console.log(error);
@@ -100,7 +100,7 @@ const Products = () => {
     const getAllProducts = async () => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`http://localhost:8080/api/v1/product/product-list/${page}`);
+            const { data } = await axios.get(`https://timora-backend-un9e.onrender.com/api/v1/product/product-list/${page}`);
             setLoading(false);
             setProducts((prev) => (page === 1 ? data.products : [...prev, ...data.products]));
         } catch (error) {
@@ -138,7 +138,7 @@ const Products = () => {
                             // >
                             <div className="card m-2" style={{ width: "18rem" }}>
                                 <img
-                                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                                    src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
                                     className="card-img-top"
                                     alt={p.name}
                                 />

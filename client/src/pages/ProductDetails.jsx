@@ -22,7 +22,7 @@ const ProductDetails = () => {
     const getProduct = async () => {
         try {
             const { data } = await axios.get(
-                `http://localhost:8080/api/v1/product/get-product/${params.slug}`
+                `https://timora-backend-un9e.onrender.com/api/v1/product/get-product/${params.slug}`
             );
             setProduct(data?.product);
             getSimilarProduct(data?.product._id, data?.product.category._id);
@@ -34,7 +34,7 @@ const ProductDetails = () => {
     const getSimilarProduct = async (pid, cid) => {
         try {
             const { data } = await axios.get(
-                `http://localhost:8080/api/v1/product/related-product/${pid}/${cid}`
+                `https://timora-backend-un9e.onrender.com/api/v1/product/related-product/${pid}/${cid}`
             );
             setRelatedProducts(data?.products);
         } catch (error) {
@@ -48,7 +48,7 @@ const ProductDetails = () => {
                 <div className="watch-details-card">
                     <div className="watch-image">
                         <img
-                            src={`http://localhost:8080/api/v1/product/product-photo/${product._id}`}
+                            src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${product._id}`}
                             alt={product.name}
                         />
                     </div>
@@ -81,7 +81,7 @@ const ProductDetails = () => {
                             <div className="watch-card" key={p._id}>
                                 <div className="watch-card-img">
                                     <img
-                                        src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                                        src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
                                         alt={p.name}
                                     />
                                 </div>

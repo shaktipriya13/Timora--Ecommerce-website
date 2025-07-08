@@ -12,7 +12,7 @@ export default function PrivateRoute() {
     const authCheck = async () => {
       try {
         console.log("Token being sent:", auth?.token); // Add this
-        const res = await axios.get("http://localhost:8080/api/v1/auth/user-auth", {
+        const res = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/auth/user-auth", {
           headers: {
             Authorization: `${auth?.token}`,
           },
@@ -55,7 +55,7 @@ export default function PrivateRoute() {
 //       }
 //       try {
 //         console.log("Token being sent:", auth?.token);
-//         const res = await axios.get("http://localhost:8080/api/v1/auth/user-auth", {
+//         const res = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/auth/user-auth", {
 //           headers: {
 //             Authorization: `Bearer ${auth?.token}`, // Ensure "Bearer" prefix
 //           },

@@ -65,7 +65,7 @@
 //     //get payment gateway token
 //     const getToken = async () => {
 //         try {
-//             const { data } = await axios.get("http://localhost:8080/api/v1/product/braintree/token");
+//             const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/product/braintree/token");
 //             setClientToken(data?.clientToken);
 //         } catch (error) {
 //             console.log(error);
@@ -121,7 +121,7 @@
 //                                     <div className="row g-0 align-items-center">
 //                                         <div className="col-md-4">
 //                                             <img
-//                                                 src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+//                                                 src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
 //                                                 className="img-fluid rounded-start"
 //                                                 alt={p.name}
 //                                                 style={{ height: "130px", objectFit: "cover" }}

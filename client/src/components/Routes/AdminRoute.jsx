@@ -11,7 +11,7 @@
 // //   useEffect(() => {
 // //     const authCheck = async () => {
 // //       try {
-// //         const res = await axios.get("http://localhost:8080/api/v1/auth/user-auth");
+// //         const res = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/auth/user-auth");
 // //         if (res.data.ok) {
 // //           setOk(true);
 // //         } else {
@@ -42,7 +42,7 @@
 //   useEffect(() => {
 //     const authCheck = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:8080/api/v1/auth/user-auth");
+//         const res = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/auth/user-auth");
 //         if (res.data.ok) {
 //           setOk(true);
 //         } else {
@@ -76,7 +76,7 @@ export default function AdminRoute() {
     useEffect(() => {
         const authCheck = async () => {
             try {
-                const res = await axios.get("http://localhost:8080/api/v1/auth/admin-auth", {
+                const res = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/auth/admin-auth", {
                     headers: {
                         Authorization: `${auth?.token}`,
                     },
