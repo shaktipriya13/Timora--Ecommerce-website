@@ -3,8 +3,14 @@ import Layout from "../components/Layout/Layout";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/CategoryProductStyles.css";
 import axios from "axios";
+import { useCart } from "../context/cart.jsx";
+import { toast } from "react-toastify";
+
+
 const CategoryProduct = () => {
     const params = useParams();
+    const [cart, setCart] = useCart();
+
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [category, setCategory] = useState([]);
@@ -30,7 +36,7 @@ const CategoryProduct = () => {
                 <h4 className="text-center">Category - {category?.name}</h4>
                 <h6 className="text-center">{products?.length} result found </h6>
                 <div className="row">
-                    <div className="col-md-9 offset-1">
+                    <div className="col-md-9 offset-2">
                         <div className="d-flex flex-wrap">
                             {products?.map((p) => (
                                 <div className="card m-2" key={p._id}>
@@ -41,7 +47,7 @@ const CategoryProduct = () => {
                                     />
                                     <div className="card-body">
                                         <div className="card-name-price">
-                                            <h5 className="card-title">{p.name}</h5>
+                                            <h5 className="card-title">{p.name.substring(0, 25)}...</h5>
                                             <h5 className="card-title card-price">
                                                 {p.price.toLocaleString("en-IN", {
                                                     style: "currency",
@@ -50,20 +56,25 @@ const CategoryProduct = () => {
                                             </h5>
                                         </div>
                                         <p className="card-text ">
-                                            {p.description.substring(0, 60)}...
+                                            {p.description.substring(0, 40)}...
                                         </p>
                                         <div className="card-name-price">
-                                            <button
-                                                className="btn btn-info ms-1"
+                                            {/* <button
+                                                className="btn btn-info ms-1" */}
+                                            <button className="btn btn-outline-dark watch-more-btn"
                                                 onClick={() => navigate(`/product/${p.slug}`)}
                                             >
                                                 More Details
                                             </button>
                                             <button
-                                                className="btn btn-info ms-1"
-                                                onClick={() => navigate(`/product/${p.slug}`)}
+                                                className="btn btn-dark watch-more-btn"
+                                                onClick={() => {
+                                                    setCart([...cart, p]);
+                                                    localStorage.setItem("cart", JSON.stringify([...cart, p]));
+                                                    toast.success("Item Added to cart");
+                                                }}
                                             >
-                                                Add to Cart
+                                                ADD TO CART
                                             </button>
                                             {/* <button
                     className="btn btn-dark ms-1"

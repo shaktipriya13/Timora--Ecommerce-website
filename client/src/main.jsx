@@ -9,7 +9,6 @@ import { CartProvider } from './context/cart.jsx'
 import "antd/dist/reset.css";
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <AuthProvider>
       <SearchProvider>
         <CartProvider>
@@ -19,5 +18,4 @@ createRoot(document.getElementById('root')).render(
         </CartProvider>
       </SearchProvider>
     </AuthProvider>
-  </StrictMode >
 )

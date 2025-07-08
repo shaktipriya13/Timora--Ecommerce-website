@@ -1,0 +1,108 @@
+/* ===================================
+========= Premium Login/Register Page - Pinkish Gold Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+
+.form-container {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ffe6f0, #fff2e6);
+    /* Pink to peach */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container form {
+    background-color: #fff9f6;
+    /* soft cream */
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+    /* champagne gold shadow */
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid #f9e0d9;
+    /* subtle rose border */
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container form .title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 26px;
+    color: #cc6699;
+    /* deep rose */
+    letter-spacing: 1px;
+}
+
+.form-container form input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: none;
+    border-bottom: 2px solid #f4b3c2;
+    /* soft pink border */
+    border-radius: 4px;
+    background-color: #fffdfc;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.form-container form input:focus {
+    outline: none;
+    border-bottom: 2px solid #e2a9a9;
+    /* pinkish gold focus */
+    background-color: #fffaf8;
+}
+
+/* Placeholder style */
+.form-container form input::placeholder {
+    color: #d4a5a5;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Primary button */
+.form-container form button {
+    border: none;
+    border-radius: 30px;
+    background-image: linear-gradient(to right, #f4b3c2, #d4af37);
+    /* pink to gold */
+    color: white;
+    width: 100%;
+    padding: 12px 0;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+}
+
+.form-container form button:hover {
+    background-image: linear-gradient(to right, #d4af37, #f4b3c2);
+    /* gold to pink */
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+/* Forgot password button */
+.forgot-btn {
+    margin-top: 12px;
+    background-color: transparent !important;
+    border: 1px solid #d4af37 !important;
+    color: #d4af37 !important;
+    font-size: 14px;
+    padding: 7px 14px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.forgot-btn:hover {
+    background-color: #d4af37 !important;
+    color: white !important;
+    cursor: pointer;
+}

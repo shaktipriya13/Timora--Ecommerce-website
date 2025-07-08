@@ -245,13 +245,33 @@ const HomePage = () => {
             author={"Shakti Priya"}
         >
             {/* Banner Image */}
-            <img
-                src="/images/b2.png"
+            {/* <img
+                src="/images/bn1.png"
                 className="banner-img"
                 alt="Watch Store Banner"
                 width="100%"
                 height="800px" // or any desired value
-            />
+            /> */}
+            <div
+                style={{
+                    width: '100%',
+                    height: 'auto',         // No fixed height
+                    overflow: 'visible',    // Allow image to show fully
+                }}
+            >
+                <img
+                    src="/images/abc.png"
+                    alt="Watch Store Banner"
+                    style={{
+                        width: '100%',
+                        height: 'auto',
+                        display: 'block',
+                        objectFit: 'contain'   // or remove this line
+                    }}
+                />
+            </div>
+
+
 
             <div className="container-fluid row mt-3 home-page">
                 {/* Filter Sidebar */}

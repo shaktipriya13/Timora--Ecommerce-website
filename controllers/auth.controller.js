@@ -1,6 +1,7 @@
 // ye ek api hai jo user ko register karne ke liye use hoti hai
 import { hashPassword, comparePassword } from "../helpers/auth.helper.js";
 import userModel from '../models/user.model.js'
+import orderModel from '../models/order.model.js'
 import JWT from "jsonwebtoken";
 
 export const registerController = async (req, res) => {
@@ -207,58 +208,91 @@ export const updateProfileController = async (req, res) => {
 };
 
 //orders
-export const getOrdersController = async (req, res) => {
-    try {
-        const orders = await orderModel
-            .find({ buyer: req.user._id })
-            .populate("products", "-photo")
-            .populate("buyer", "name");
-        res.json(orders);
-    } catch (error) {
-        console.log(error);
-        res.status(500).send({
-            success: false,
-            message: "Error WHile Geting Orders",
-            error,
-        });
-    }
-};
-//orders
-export const getAllOrdersController = async (req, res) => {
-    try {
-        const orders = await orderModel
-            .find({})
-            .populate("products", "-photo")
-            .populate("buyer", "name")
-            .sort({ createdAt: "-1" });
-        res.json(orders);
-    } catch (error) {
-        console.log(error);
-        res.status(500).send({
-            success: false,
-            message: "Error WHile Geting Orders",
-            error,
-        });
-    }
-};
+// export const getOrdersController = async (req, res) => {
+//     try {
+//         const orders = await orderModel
+//             .find({ buyer: req.user._id })
+//             .populate("products", "-photo")
+//             .populate("buyer", "name");
+//         res.json(orders);
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).send({
+//             success: false,
+//             message: "Error WHile Geting Orders",
+//             error,
+//         });
+//     }
+// };
+// //orders
+// export const getAllOrdersController = async (req, res) => {
+//     try {
+//         const orders = await orderModel
+//             .find({buyer: req.user._id})
+//             .populate("products", "-photo")
+//             .populate("buyer", "name")
+//             .sort({ createdAt: "-1" });
+//         res.json(orders);
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).send({
+//             success: false,
+//             message: "Error While Geting Orders",
+//             error,
+//         });
+//     }
+// };
+// export const getOrdersController = async (req, res) => {
+//     try {
+//         const orders = await orderModel
+//             .find({ buyer: req.user._id })
+//             .populate("products", "-photo")
+//             .populate("buyer", "name");
+//         res.status(200).json(orders); // Explicit 200 status
+//     } catch (error) {
+//         console.error("Error fetching user orders:", error); // Log full error
+//         res.status(500).send({
+//             success: false,
+//             message: "Error while fetching orders",
+//             error: "Internal server error", // Generic message
+//         });
+//     }
+// };
 
+// export const getAllOrdersController = async (req, res) => {
+//     try {
+//         const orders = await orderModel
+//             .find() // Remove buyer filter to get all orders
+//             .populate("products", "-photo")
+//             .populate("buyer", "name")
+//             .sort({ createdAt: "-1" }); // Keep sorting
+//         res.status(200).json(orders); // Explicit 200 status
+//     } catch (error) {
+//         console.error("Error fetching all orders:", error); // Log full error
+//         res.status(500).send({
+//             success: false,
+//             message: "Error while fetching all orders",
+//             error: "Internal server error", // Generic message
+//         });
+//     }
+// };
 //order status
-export const orderStatusController = async (req, res) => {
-    try {
-        const { orderId } = req.params;
-        const { status } = req.body;
-        const orders = await orderModel.findByIdAndUpdate(
-            orderId,
-            { status },
-            { new: true }
-        );
-        res.json(orders);
-    } catch (error) {
-        console.log(error);
-        res.status(500).send({
-            success: false,
-            message: "Error While Updateing Order",
-            error,
-        });
-    }
-};
+// export const orderStatusController = async (req, res) => {
+//     try {
+//         const { orderId } = req.params;
+//         const { status } = req.body;
+//         const orders = await orderModel.findByIdAndUpdate(
+//             orderId,
+//             { status },
+//             { new: true }
+//         );
+//         res.json(orders);
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).send({
+//             success: false,
+//             message: "Error While Updateing Order",
+//             error,
+//         });
+//     }
+// };

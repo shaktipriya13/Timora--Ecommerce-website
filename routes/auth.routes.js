@@ -36,6 +36,20 @@ router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
 // update profile
 router.put("/profile", requireSignIn, updateProfileController);
 
+// orders
+// router.get("/orders", requireSignIn, isAdmin, getAllOrdersController);
+// Get all orders (admin only)
+// router.get("/orders", requireSignIn, getOrdersController);
 
+// //all orders
+// router.get("/all-orders", requireSignIn, isAdmin, getAllOrdersController);
+
+// // order status update
+// router.put(
+//     "/order-status/:orderId",
+//     requireSignIn,
+//     isAdmin,
+//     orderStatusController
+// );
 
 export default router;

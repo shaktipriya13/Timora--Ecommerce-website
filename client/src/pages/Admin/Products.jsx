@@ -131,23 +131,38 @@ const Products = () => {
                     <h1 className="text-center">All Products List</h1>
                     <div className="d-flex flex-wrap">
                         {products?.map((p) => (
-                            <Link
-                                key={p._id}
-                                to={`/dashboard/admin/product/${p.slug}`}
-                                className="product-link"
-                            >
-                                <div className="card m-2" style={{ width: "18rem" }}>
-                                    <img
-                                        src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
-                                        className="card-img-top"
-                                        alt={p.name}
-                                    />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{p.name}</h5>
-                                        <p className="card-text">{p.description}</p>
-                                    </div>
+                            // <Link
+                            //     key={p._id}
+                            //     to={`/dashboard/admin/product/${p.slug}`}
+                            //     className="product-link"
+                            // >
+                            <div className="card m-2" style={{ width: "18rem" }}>
+                                <img
+                                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                                    className="card-img-top"
+                                    alt={p.name}
+                                />
+                                <div className="card-body">
+                                    <h5 className="card-title">{p.name}</h5>
+                                    {/* <p className="card-text">{p.description}</p> */}
+                                    <p className="card-text">{p.description.substring(0, 60)}...</p>
+
+
                                 </div>
-                            </Link>
+                                <div className="text-center my-2">
+                                    <button
+                                        className="btn btn-outline-dark watch-more-btn"
+                                        onClick={() => {
+                                            window.location.href = `/dashboard/admin/product/${p.slug}`;
+                                        }}
+                                    >
+                                        Update Product
+                                    </button>
+                                </div>
+ */}
+                            </div>
+
+                            // </Link>
                         ))}
                     </div>
                     {/* Load More Button */}
@@ -166,7 +181,7 @@ const Products = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </Layout >
     );
 };
 
