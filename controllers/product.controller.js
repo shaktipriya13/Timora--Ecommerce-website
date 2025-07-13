@@ -411,7 +411,7 @@ import slugify from "slugify";
 import dotenv from "dotenv";
 
 dotenv.config();
-const slug = slugify(name, { lower: true, strict: true }); /
+const slug = slugify(name, { lower: true, strict: true });
 //payment gateway
 // var gateway = new braintree.BraintreeGateway({
 //     environment: braintree.Environment.Sandbox,
