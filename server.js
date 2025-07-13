@@ -66,7 +66,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow Vite React frontend
+    origin: ['http://localhost:5173', "https://timora-shaktipriya.onrender.com"], // Allow Vite React frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
 }));
