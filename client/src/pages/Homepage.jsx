@@ -325,9 +325,15 @@ const HomePage = () => {
                                     <div className="watch-bottom">
                                         <span className="watch-price">₹ {p.price.toLocaleString("en-IN")}</span>
                                         <div className="d-flex">
-                                            <button
+                                            {/* <button
                                                 className="btn btn-outline-dark watch-more-btn"
                                                 onClick={() => (window.location.href = `/product/${p.slug}`)}
+                                            >
+                                                More Details
+                                            </button> */}
+                                            <button
+                                                className="btn btn-outline-dark watch-more-btn"
+                                                onClick={() => navigate(`/product/${p.slug}`)}
                                             >
                                                 More Details
                                             </button>

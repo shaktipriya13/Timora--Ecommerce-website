@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { AiOutlineReload } from "react-icons/ai";
 import "../../styles/Homepage2.css";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Products = () => {
@@ -14,6 +16,7 @@ const Products = () => {
     const [total, setTotal] = useState(0); // Total number of products
     const [page, setPage] = useState(1); // Current page
     const [loading, setLoading] = useState(false); // Loading state for "Load More"
+    const navigate = useNavigate();
 
     // Get total products count
     const getTotal = async () => {
@@ -83,8 +86,11 @@ const Products = () => {
                                     <button
                                         className="btn btn-outline-dark watch-more-btn"
                                         onClick={() => {
-                                            window.location.href = `/dashboard/admin/product/${p.slug}`;
-                                        }}
+
+                                            () => navigate(`/dashboard/admin/product/${p.slug}}`)
+                                        }
+
+                                        }
                                     >
                                         Update Product
                                     </button>

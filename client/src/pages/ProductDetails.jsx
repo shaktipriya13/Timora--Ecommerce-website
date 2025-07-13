@@ -103,7 +103,8 @@ const ProductDetails = () => {
                                     {/* added page reload fxnaltiy in below */}
                                     <button
                                         className="watch-more-btn"
-                                        onClick={() => (window.location.href = `/product/${p.slug}`)}
+                                        onClick={() => (
+                                            () => navigate(`/product/${p.slug}`)}
                                     >
                                         More Details
                                     </button>

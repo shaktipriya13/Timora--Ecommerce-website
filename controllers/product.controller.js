@@ -411,7 +411,7 @@ import slugify from "slugify";
 import dotenv from "dotenv";
 
 dotenv.config();
-
+const slug = slugify(name, { lower: true, strict: true }); /
 //payment gateway
 // var gateway = new braintree.BraintreeGateway({
 //     environment: braintree.Environment.Sandbox,
@@ -492,7 +492,8 @@ export const getProductController = async (req, res) => {
 export const getSingleProductController = async (req, res) => {
     try {
         const product = await productModel
-            .findOne({ slug: req.params.slug })
+
+            .findOne({ slug: { $regex: `^${req.params.slug}$`, $options: 'i' } })
             .select("-photo")
             .populate("category");
         res.status(200).send({
