@@ -104,7 +104,7 @@ const ProductDetails = () => {
                                     <button
                                         className="watch-more-btn"
                                         onClick={() => (
-                                            () => navigate(`/product/${p.slug}`)}
+                                            () => navigate(`/product/${p.slug}`))}
                                     >
                                         More Details
                                     </button>
