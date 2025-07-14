@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/ProductDetailsStyles.css";
 import "../styles/WatchStyle.css"
+import { serverUrl } from './../main';
 // In React Router, anything after a colon (:) in a route path is a parameter.
 // A URL parameter (or "route param") is a variable part of the route path that is defined in the Route.
 
@@ -22,7 +23,7 @@ const ProductDetails = () => {
     const getProduct = async () => {
         try {
             const { data } = await axios.get(
-                `https://timora-backend-un9e.onrender.com/api/v1/product/get-product/${params.slug}`
+                `${serverUrl}/api/v1/product/get-product/${params.slug}`
             );
             setProduct(data?.product);
             getSimilarProduct(data?.product._id, data?.product.category._id);
@@ -34,7 +35,7 @@ const ProductDetails = () => {
     const getSimilarProduct = async (pid, cid) => {
         try {
             const { data } = await axios.get(
-                `https://timora-backend-un9e.onrender.com/api/v1/product/related-product/${pid}/${cid}`
+                `${serverUrl}/api/v1/product/related-product/${pid}/${cid}`
             );
             setRelatedProducts(data?.products);
         } catch (error) {
@@ -48,7 +49,7 @@ const ProductDetails = () => {
                 <div className="watch-details-card">
                     <div className="watch-image">
                         <img
-                            src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${product._id}`}
+                            src={`${serverUrl}/api/v1/product/product-photo/${product._id}`}
                             alt={product.name}
                         />
                     </div>
@@ -81,7 +82,7 @@ const ProductDetails = () => {
                             <div className="watch-card" key={p._id}>
                                 <div className="watch-card-img">
                                     <img
-                                        src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
+                                        src={`${serverUrl}/api/v1/product/product-photo/${p._id}`}
                                         alt={p.name}
                                     />
                                 </div>

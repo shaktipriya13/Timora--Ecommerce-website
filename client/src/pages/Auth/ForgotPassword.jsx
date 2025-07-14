@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../styles/AuthStyles.css";
+import { serverUrl } from "../../main";
 
 const ForgotPasssword = () => {
     const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ const ForgotPasssword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("https://timora-backend-un9e.onrender.com/api/v1/auth/forgot-password", {
+            const res = await axios.post(`${serverUrl}/api/v1/auth/forgot-password`, {
                 email,
                 newPassword,
                 answer,

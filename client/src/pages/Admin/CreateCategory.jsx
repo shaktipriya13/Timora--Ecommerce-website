@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
+import { serverUrl } from "../../main";
 const CreateCategory = () => {
     const [categories, setCategories] = useState([]);//there will be multiple values so we are using array
     const [name, setName] = useState("");
@@ -16,7 +17,7 @@ const CreateCategory = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post("https://timora-backend-un9e.onrender.com/api/v1/category/create-category", {
+            const { data } = await axios.post(`${serverUrl}/api/v1/category/create-category`, {
                 name,
             });
             if (data?.success) {
@@ -35,7 +36,7 @@ const CreateCategory = () => {
     const getAllCategory = async () => {
         try {
             // in try we are sending an axios request to the backend to get all the categories
-            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/category/get-category");
+            const { data } = await axios.get(`${serverUrl}/api/v1/category/get-category`);
             if (data?.success) {
                 setCategories(data?.category);
             }
@@ -54,7 +55,7 @@ const CreateCategory = () => {
         e.preventDefault();
         try {
             const { data } = await axios.put(
-                `https://timora-backend-un9e.onrender.com/api/v1/category/update-category/${selected._id}`,
+                `${serverUrl}/api/v1/category/update-category/${selected._id}`,
                 { name: updatedName }
             );
             if (data?.success) {
@@ -74,7 +75,7 @@ const CreateCategory = () => {
     const handleDelete = async (pId) => {
         try {
             const { data } = await axios.delete(
-                `https://timora-backend-un9e.onrender.com/api/v1/category/delete-category/${pId}`
+                `${serverUrl}/api/v1/category/delete-category/${pId}`
             );
             if (data.success) {
                 toast.success(`category is deleted`);

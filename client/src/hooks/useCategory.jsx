@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { serverUrl } from "../main";
 
 export default function useCategory() {
     const [categories, setCategories] = useState([]);
@@ -7,7 +8,7 @@ export default function useCategory() {
     //get cat
     const getCategories = async () => {
         try {
-            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/category/get-category");
+            const { data } = await axios.get(`${serverUrl}/api/v1/category/get-category`);
             setCategories(data?.category);
         } catch (error) {
             console.log(error);

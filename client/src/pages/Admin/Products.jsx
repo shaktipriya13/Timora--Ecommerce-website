@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineReload } from "react-icons/ai";
 import "../../styles/Homepage2.css";
 import { useNavigate } from "react-router-dom";
+import { serverUrl } from "../../main";
 
 
 
@@ -21,7 +22,7 @@ const Products = () => {
     // Get total products count
     const getTotal = async () => {
         try {
-            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/product/product-count");
+            const { data } = await axios.get(`${serverUrl}/api/v1/product/product-count`);
             setTotal(data?.total);
         } catch (error) {
             console.log(error);
@@ -33,7 +34,7 @@ const Products = () => {
     const getAllProducts = async () => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`https://timora-backend-un9e.onrender.com/api/v1/product/product-list/${page}`);
+            const { data } = await axios.get(`${serverUrl}/api/v1/product/product-list/${page}`);
             setLoading(false);
             setProducts((prev) => (page === 1 ? data.products : [...prev, ...data.products]));
         } catch (error) {
@@ -71,7 +72,7 @@ const Products = () => {
                             // >
                             <div className="card m-2" style={{ width: "18rem" }}>
                                 <img
-                                    src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
+                                    src={`${serverUrl}/api/v1/product/product-photo/${p._id}`}
                                     className="card-img-top"
                                     alt={p.name}
                                 />

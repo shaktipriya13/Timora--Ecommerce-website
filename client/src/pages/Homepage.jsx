@@ -14,6 +14,7 @@ import { useCart } from "../context/cart.jsx";
 // import "../styles/Homepage.css";
 import "../styles/Homepage2.css";
 import { toast } from "react-toastify";
+import { serverUrl } from "../main.jsx";
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -29,7 +30,7 @@ const HomePage = () => {
     // Get all categories
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/category/get-category");
+            const { data } = await axios.get(`${serverUrl}/api/v1/category/get-category`);
             if (data?.success) {
                 setCategories(data?.category);
             }
@@ -41,7 +42,7 @@ const HomePage = () => {
     // Get total products count
     const getTotal = async () => {
         try {
-            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/product/product-count");
+            const { data } = await axios.get(`${serverUrl}/api/v1/product/product-count`);
             setTotal(data?.total);
         } catch (error) {
             console.log(error);
@@ -52,7 +53,7 @@ const HomePage = () => {
     const getAllProducts = async () => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`https://timora-backend-un9e.onrender.com/api/v1/product/product-list/${page}`);
+            const { data } = await axios.get(`${serverUrl}/api/v1/product/product-list/${page}`);
             setLoading(false);
             setProducts(data.products);
         } catch (error) {
@@ -65,7 +66,7 @@ const HomePage = () => {
     const loadMore = async () => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`https://timora-backend-un9e.onrender.com/api/v1/product/product-list/${page}`);
+            const { data } = await axios.get(`${serverUrl}/api/v1/product/product-list/${page}`);
             setLoading(false);
             setProducts([...products, ...data?.products]);
         } catch (error) {
@@ -89,7 +90,7 @@ const HomePage = () => {
     const filterProduct = async () => {
         try {
             // following is an api call
-            const { data } = await axios.post("https://timora-backend-un9e.onrender.com/api/v1/product/product-filters", {
+            const { data } = await axios.post(`${serverUrl}/api/v1/product/product-filters`, {
                 checked,
                 radio,
             });
@@ -108,133 +109,24 @@ const HomePage = () => {
     // Load products only if no filters are applied
     useEffect(() => {
         if (!checked.length || !radio.length) getAllProducts();
-    }, [checked.length, radio.length]);
+        // }, [checked.length, radio.length]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [checked, radio]);
 
     // Load filtered products
     useEffect(() => {
         if (checked.length || radio.length) filterProduct();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked, radio]);
 
     // Load more products when page is incremented
     useEffect(() => {
         if (page === 1) return;
         loadMore();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page]);
 
     return (
-        // <Layout
-        //     title={"Timora - Your Trusted Online Shopping Partner"}
-        //     description={
-        //         "Explore top-quality products at affordable prices on Timora. Enjoy secure payments, fast delivery, and 24/7 customer support."
-        //     }
-        //     keywords={"Timora, online shopping, ecommerce, best prices, secure checkout, fast delivery"}
-        //     author={"Shakti Priya"}
-        // >
-        //     {/* Banner Image */}
-        //     <img
-        //         src="/images/banner.png"
-        //         className="banner-img"
-        //         alt="bannerimage"
-        //         width={"100%"}
-        //     />
-
-        //     <div className="container-fluid row mt-3 home-page">
-        //         {/* Left Filter Sidebar */}
-        //         <div className="col-md-3 filters">
-        //             <h4 className="text-center">Filter By Category</h4>
-        //             <div className="d-flex flex-column">
-        //                 {categories?.map((c) => (
-        //                     <Checkbox
-        //                         key={c._id}
-        //                         onChange={(e) => handleFilter(e.target.checked, c._id)}
-        //                     >
-        //                         {c.name}
-        //                     </Checkbox>
-        //                 ))}
-        //             </div>
-
-        //             <h4 className="text-center mt-4">Filter By Price</h4>
-        //             <div className="d-flex flex-column">
-        //                 <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-        //                     {Prices?.map((p) => (
-        //                         <div key={p._id}>
-        //                             <Radio value={p.array}>{p.name}</Radio>
-        //                         </div>
-        //                     ))}
-        //                 </Radio.Group>
-        //             </div>
-
-        //             <div className="d-flex flex-column mt-3">
-        //                 <button
-        //                     className="btn btn-danger"
-        //                     onClick={() => window.location.reload()}
-        //                 >
-        //                     RESET FILTERS
-        //                 </button>
-        //             </div>
-        //         </div>
-
-        //         {/* Right Product Grid */}
-        //         <div className="col-md-9">
-        //             <h1 className="text-center">All Products</h1>
-        //             <div className="d-flex flex-wrap">
-        //                 {products?.map((p) => (
-        //                     <div className="card m-2" key={p._id} style={{ width: "18rem" }}>
-        //                         <img
-        //                             src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
-        //                             className="card-img-top"
-        //                             alt={p.name}
-        //                         />
-        //                         <div className="card-body">
-        //                             <div className="card-name-price">
-        //                                 <h5 className="card-title">{p.name}</h5>
-        //                                 <h6 className="card-title card-price">
-        //                                     ₹ {p.price.toLocaleString("en-IN")}
-        //                                 </h6>
-        //                             </div>
-        //                             <p className="card-text">
-        //                                 {p.description.substring(0, 60)}...
-        //                             </p>
-        //                             <div className="card-name-price">
-        //                                 <button
-        //                                     className="btn btn-info ms-1"
-        //                                     onClick={() => navigate(`/product/${p.slug}`)}
-        //                                 >
-        //                                     More Details
-        //                                 </button>
-        //                                 {/* <button
-        //                                     className="btn btn-dark ms-1"
-        //                                     onClick={() => {
-        //                                         setCart([...cart, p]);
-        //                                         localStorage.setItem("cart", JSON.stringify([...cart, p]));
-        //                                         toast.success("Item Added to cart");
-        //                                     }}
-        //                                 >
-        //                                     ADD TO CART
-        //                                 </button> */}
-        //                             </div>
-        //                         </div>
-        //                     </div>
-        //                 ))}
-        //             </div>
-
-        //             {/* Load More Button */}
-        //             <div className="m-2 p-3">
-        //                 {products && products.length < total && (
-        //                     <button
-        //                         className="btn loadmore"
-        //                         onClick={(e) => {
-        //                             e.preventDefault();
-        //                             setPage(page + 1);
-        //                         }}
-        //                     >
-        //                         {loading ? "Loading ..." : <> Load More <AiOutlineReload /> </>}
-        //                     </button>
-        //                 )}
-        //             </div>
-        //         </div>
-        //     </div>
-        // </Layout>
 
         <Layout
             title={"Timora - Your Trusted Online Watch Store"}
@@ -244,14 +136,7 @@ const HomePage = () => {
             keywords={"watches, luxury watches, Timora, smartwatches, online shopping"}
             author={"Shakti Priya"}
         >
-            {/* Banner Image */}
-            {/* <img
-                src="/images/bn1.png"
-                className="banner-img"
-                alt="Watch Store Banner"
-                width="100%"
-                height="800px" // or any desired value
-            /> */}
+
             <div
                 style={{
                     width: '100%',
@@ -315,7 +200,7 @@ const HomePage = () => {
                         {products?.map((p) => (
                             <div className="watch-card" key={p._id}>
                                 <img
-                                    src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
+                                    src={`${serverUrl}/api/v1/product/product-photo/${p._id}`}
                                     alt={p.name}
                                     className="watch-img"
                                 />
@@ -334,6 +219,7 @@ const HomePage = () => {
                                             <button
                                                 className="btn btn-outline-dark watch-more-btn"
                                                 onClick={() => navigate(`/product/${p.slug}`)}
+                                            // navigate() is for client-side routing only — not backend API requests. so we don't need full url in navigate
                                             >
                                                 More Details
                                             </button>
@@ -377,147 +263,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-// import React, { useState } from "react";
-// import { Checkbox, Radio } from "antd";
-// import { Prices } from "../components/Prices";
-// import { useCart } from "../context/cart";
-// import { toast } from "react-toastify";
-// import { AiOutlineReload } from "react-icons/ai";
-// import Layout from "../components/Layout/Layout";
-
-// const HomePage = ({
-//     categories,
-//     products,
-//     total,
-//     page,
-//     setPage,
-//     setRadio,
-//     handleFilter,
-//     loading,
-// }) => {
-//     const [cart, setCart] = useCart();
-
-//     return (
-//         <Layout
-//             title={"Timora - Your Trusted Online Watch Store"}
-//             description={
-//                 "Discover premium watches at Timora. Shop luxury, sport, and smartwatches with fast delivery, secure checkout, and 24/7 support."
-//             }
-//             keywords={"watches, luxury watches, Timora, smartwatches, online shopping"}
-//             author={"Shakti Priya"}
-//         >
-//             {/* Banner Image */}
-//             <img
-//                 src="/images/b2.png"
-//                 className="banner-img"
-//                 alt="Watch Store Banner"
-//                 width="100%"
-//                 height="800px"
-//             />
-
-//             <div className="container-fluid row mt-3 home-page">
-//                 {/* Filter Sidebar */}
-//                 <div className="col-md-3 filters">
-//                     <h4 className="text-center">Filter By Category</h4>
-//                     <div className="d-flex flex-column">
-//                         {categories?.map((c) => (
-//                             <Checkbox
-//                                 key={c._id}
-//                                 onChange={(e) => handleFilter(e.target.checked, c._id)}
-//                             >
-//                                 {c.name}
-//                             </Checkbox>
-//                         ))}
-//                     </div>
-
-//                     <h4 className="text-center mt-4">Filter By Price</h4>
-//                     <div className="d-flex flex-column">
-//                         <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-//                             {Prices?.map((p) => (
-//                                 <div key={p._id}>
-//                                     <Radio value={p.array}>{p.name}</Radio>
-//                                 </div>
-//                             ))}
-//                         </Radio.Group>
-//                     </div>
-
-//                     <div className="d-flex flex-column mt-3">
-//                         <button
-//                             className="btn btn-danger"
-//                             onClick={() => window.location.reload()}
-//                         >
-//                             RESET FILTERS
-//                         </button>
-//                     </div>
-//                 </div>
-
-//                 {/* Product Grid */}
-//                 <div className="col-md-9">
-//                     <h1 className="text-center mb-4">All Watches</h1>
-//                     <div className="d-flex flex-wrap justify-content-center">
-//                         {products?.map((p) => (
-//                             <div className="watch-card m-3" key={p._id}>
-//                                 <img
-//                                     src={`https://timora-backend-un9e.onrender.com/api/v1/product/product-photo/${p._id}`}
-//                                     alt={p.name}
-//                                     className="watch-img"
-//                                 />
-//                                 <div className="watch-card-body">
-//                                     <h5 className="watch-title">{p.name}</h5>
-//                                     <p className="watch-description">
-//                                         {p.description.substring(0, 60)}...
-//                                     </p>
-//                                     <div className="watch-bottom d-flex justify-content-between align-items-center mt-2">
-//                                         <span className="watch-price">
-//                                             ₹ {p.price.toLocaleString("en-IN")}
-//                                         </span>
-//                                         <div className="d-flex gap-2">
-//                                             <button
-//                                                 className="watch-more-btn btn btn-outline-primary btn-sm"
-//                                                 onClick={() =>
-//                                                     (window.location.href = `/product/${p.slug}`)
-//                                                 }
-//                                             >
-//                                                 More Details
-//                                             </button>
-//                                             <button
-//                                                 className="watch-cart-btn btn btn-dark btn-sm"
-//                                                 onClick={() => {
-//                                                     setCart([...cart, p]);
-//                                                     localStorage.setItem(
-//                                                         "cart",
-//                                                         JSON.stringify([...cart, p])
-//                                                     );
-//                                                     toast.success("Item added to cart");
-//                                                 }}
-//                                             >
-//                                                 Add to Cart
-//                                             </button>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         ))}
-//                     </div>
-
-//                     {/* Load More */}
-//                     <div className="m-2 p-3 text-center">
-//                         {products && products.length < total && (
-//                             <button
-//                                 className="btn loadmore"
-//                                 onClick={(e) => {
-//                                     e.preventDefault();
-//                                     setPage(page + 1);
-//                                 }}
-//                             >
-//                                 {loading ? "Loading ..." : <> Load More <AiOutlineReload /> </>}
-//                             </button>
-//                         )}
-//                     </div>
-//                 </div>
-//             </div>
-//         </Layout>
-//     );
-// };
-
-// export default HomePage;

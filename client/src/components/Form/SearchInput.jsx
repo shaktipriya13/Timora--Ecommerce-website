@@ -3,6 +3,7 @@ import React from "react";
 import { useSearch } from "../../context/search";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { serverUrl } from "../../main";
 const SearchInput = () => {
     const [values, setValues] = useSearch();
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ const SearchInput = () => {
         e.preventDefault();
         try {
             const { data } = await axios.get(
-                `https://timora-backend-un9e.onrender.com/api/v1/product/search/${values.keyword}`
+                `${serverUrl}/api/v1/product/search/${values.keyword}`
             );
             setValues({ ...values, results: data });
             navigate("/search");

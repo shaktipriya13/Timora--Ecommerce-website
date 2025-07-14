@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
+import { serverUrl } from "../../main";
 const { Option } = Select;
 
 const CreateProduct = () => {
@@ -21,7 +22,7 @@ const CreateProduct = () => {
     //get all category
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get("https://timora-backend-un9e.onrender.com/api/v1/category/get-category");
+            const { data } = await axios.get(`${serverUrl}/api/v1/category/get-category`);
             if (data?.success) {
                 setCategories(data?.category);
             }
@@ -35,32 +36,7 @@ const CreateProduct = () => {
         getAllCategory();
     }, []);
 
-    //create product function
-    // const handleCreate = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const productData = new FormData();
-    //         productData.append("name", name);
-    //         productData.append("description", description);
-    //         productData.append("price", price);
-    //         productData.append("quantity", quantity);
-    //         productData.append("photo", photo);
-    //         productData.append("category", category);
-    //         const { data } = axios.post(
-    //             "https://timora-backend-un9e.onrender.com/api/v1/product/create-product",
-    //             productData
-    //         );
-    //         if (data?.success) {
-    //             toast.error(data?.message);
-    //         } else {
-    //             toast.success("Product Created Successfully");
-    //             navigate("/dashboard/admin/products");
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //         toast.error("something went wrong");
-    //     }
-    // };
+
     const handleCreate = async (e) => {
         e.preventDefault();
         try {
@@ -74,7 +50,7 @@ const CreateProduct = () => {
 
             // ✅ Await axios call
             const { data } = await axios.post(
-                "https://timora-backend-un9e.onrender.com/api/v1/product/create-product",
+                `${serverUrl}/api/v1/product/create-product`,
                 productData
             );
 
