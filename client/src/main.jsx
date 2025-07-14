@@ -10,7 +10,7 @@ import { CartProvider } from './context/cart.jsx'
 import "antd/dist/reset.css";
 
 // export const serverUrl = "https://timora-backend-un9e.onrender.com";
-export const serverUrl = "http://localhost:8080";
+export const serverUrl = "https://timora-backend-un9e.onrender.com";
 
 createRoot(document.getElementById('root')).render(
   <AuthProvider>
