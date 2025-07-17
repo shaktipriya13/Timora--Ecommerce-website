@@ -383,7 +383,8 @@ const CartPage = () => {
                                     className="btn btn-primary"
                                     onClick={() =>
                                         navigate("/payment", {
-                                            state: { total: totalPrice() },
+                                            // state: { total: totalPrice() },
+                                            state: { total: totalPriceNumber() }, // Use numeric value
                                         })
                                     }
                                 >

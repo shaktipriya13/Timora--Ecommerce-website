@@ -16,13 +16,53 @@ const PaymentForm = ({ defaultAmount }) => {
         });
     };
 
-    const handlePayment = async () => {
-        const res = await loadRazorpayScript();
-        if (!res) {
-            alert("Razorpay SDK Failed to load");
-            return;
-        }
+    // const handlePayment = async () => {
+    //     const res = await loadRazorpayScript();
+    //     if (!res) {
+    //         alert("Razorpay SDK Failed to load");
+    //         return;
+    //     }
 
+    //     const { data } = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/payment/order`, {
+    //         amount: Number(amount),
+    //     });
+
+    //     const options = {
+    //         key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+    //         amount: data.order.amount,
+    //         currency: "INR",
+    //         name: "Test Payment",
+    //         description: "Test Transaction",
+    //         order_id: data.order.id,
+    //         handler: async function (response) {
+    //             const verify = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/payment/verify`, {
+    //                 razorpay_order_id: response.razorpay_order_id,
+    //                 razorpay_payment_id: response.razorpay_payment_id,
+    //                 razorpay_signature: response.razorpay_signature,
+    //             });
+
+    //             if (verify.data.success) {
+    //                 alert("✅ Payment Verified Successfully");
+    //             } else {
+    //                 alert("❌ Payment Verification Failed");
+    //             }
+    //         },
+    //         theme: {
+    //             color: "#3399cc",
+    //         },
+    //     };
+
+    //     const rzp = new window.Razorpay(options);
+    //     rzp.open();
+    // };
+
+    const handlePayment = async () => {
+    if (!window.Razorpay) {
+        alert("Razorpay SDK Failed to load");
+        return;
+    }
+
+    try {
         const { data } = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/payment/order`, {
             amount: Number(amount),
         });
@@ -54,8 +94,11 @@ const PaymentForm = ({ defaultAmount }) => {
 
         const rzp = new window.Razorpay(options);
         rzp.open();
-    };
-
+    } catch (error) {
+        console.error("Payment error:", error);
+        alert("Failed to initiate payment");
+    }
+};
     return (
         <div>
             <input
@@ -80,14 +123,25 @@ const PaymentPage = () => {
     const numericTotal = total?.replace(/[^0-9.]/g, "");
 
     return (
+        // <Layout>
+        //     <div className="container mt-4">
+        //         <h2>Payment Page</h2>
+        //         <p>Total Amount: <strong>{total}</strong></p>
+        //         <PaymentForm defaultAmount={numericTotal} />
+        //     </div>
+    
+    // </Layout>
+       
         <Layout>
             <div className="container mt-4">
                 <h2>Payment Page</h2>
-                <p>Total Amount: <strong>{total}</strong></p>
-                <PaymentForm defaultAmount={numericTotal} />
+                <p>Total Amount: <strong>{total?.toLocaleString("en-IN", { style: "currency", currency: "INR" })}</strong></p>
+                <PaymentForm defaultAmount={total} />
             </div>
         </Layout>
-    );
+
+);
+
 };
 
 export default PaymentPage;
