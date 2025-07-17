@@ -61,6 +61,10 @@ const PaymentForm = ({ defaultAmount }) => {
         alert("Razorpay SDK Failed to load");
         return;
     }
+    if (!amount || isNaN(amount) || amount <= 0) {
+        alert("Invalid amount");
+        return;
+    }
 
     try {
         const { data } = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/payment/order`, {
