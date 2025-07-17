@@ -24,6 +24,7 @@ import ProductDetails from './pages/ProductDetails';
 import Categories from './pages/Categories';
 import CategoryProduct from './pages/CategoryProduct';
 import CartPage from './pages/CartPage';
+import PaymentPage from './pages/PaymentPage.jsx';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -42,6 +43,7 @@ function App() {
           <Route path="user" element={<Dashboard />} />
           <Route path="user/orders" element={<Orders />} />
           <Route path="user/profile" element={<Profile />} />
+          <Route path="user/payment" element={<PaymentPage />} />
         </Route>
         <Route path="/dashboard" element={<AdminRoute />}>
           <Route path="admin" element={<AdminDashboard />} />
@@ -59,6 +61,8 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/policy' element={<Policy />} />
         <Route path='*' element={<PageNotFound />} />
+        <Route path="/payment" element={<PaymentPage />} />
+
       </Routes>
     </>
   )

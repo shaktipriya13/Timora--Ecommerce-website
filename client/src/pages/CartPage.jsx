@@ -182,13 +182,25 @@ const CartPage = () => {
                                             onInstance={(instance) => setInstance(instance)}
                                         />
 
-                                        <button
+                                        {/* <button
                                             className="btn btn-primary"
                                             // onClick={handlePayment}
                                             disabled={loading || !instance || !auth?.user?.address}
                                         >
                                             {loading ? "Processing ...." : "Make Payment"}
+                                        </button> */}
+                                        <button
+                                            className="btn btn-primary"
+                                            onClick={() =>
+                                                navigate("/payment", {
+                                                state: { total: totalPrice() },
+                                                })
+                                            }
+                                            disabled={loading || !auth?.user?.address}
+                                            >
+                                            Make Payment
                                         </button>
+
                                     </>
                                 )}
                             </div>
