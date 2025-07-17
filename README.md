@@ -146,6 +146,23 @@ To deploy your own version:
 
 ---
 
+## 📷 Screenshots:
+
+### Filter funcionality
+
+<img width="1876" height="785" alt="image" src="https://github.com/user-attachments/assets/76d4d7dd-56fb-4860-9459-2d23558a831b" />
+
+### Cart Page
+
+<img width="1765" height="731" alt="image" src="https://github.com/user-attachments/assets/d07d9552-4b15-47b0-b58f-7552eafa854b" />
+
+### Razorpay Payment Gateway Integrated 
+
+<img width="1378" height="797" alt="image" src="https://github.com/user-attachments/assets/7327f53c-f2c5-4e64-a72d-ce746d4e09d2" />
+
+
+
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
