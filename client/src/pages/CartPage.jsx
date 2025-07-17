@@ -196,7 +196,7 @@ const CartPage = () => {
                                                 state: { total: totalPrice() },
                                                 })
                                             }
-                                            disabled={loading || !auth?.user?.address}
+                                           
                                             >
                                             Make Payment
                                         </button>
