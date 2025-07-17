@@ -10,6 +10,7 @@ import cors from 'cors';
 import authRoutes from './routes/auth.routes.js';
 import categoryRoutes from './routes/category.routes.js';
 import productRoutes from './routes/product.routes.js';
+import paymentRoutes from './routes/paymentRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -34,6 +35,7 @@ app.use(morgan('dev'));
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/category', categoryRoutes); // Category routes
 app.use('/api/v1/product', productRoutes); // Category routes
+app.use("/api/v1/payment", paymentRoutes);
 
 app.get('/', (req, res) => {
     res.send("<h1>Welcome to ecommer app</h1>");
