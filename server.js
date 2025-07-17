@@ -21,6 +21,7 @@ app.use(cors({
         "http://localhost:5173",
         "https://timora-shaktipriya.onrender.com"
     ],
+    // origin:'*',
     // Allow Vite React frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
