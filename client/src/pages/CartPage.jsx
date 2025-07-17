@@ -189,17 +189,32 @@ const CartPage = () => {
                                         >
                                             {loading ? "Processing ...." : "Make Payment"}
                                         </button> */}
-                                        <button
+                                        {/* <button
                                             className="btn btn-primary"
                                             onClick={() =>
                                                 navigate("/payment", {
                                                 state: { total: totalPrice() },
                                                 })
                                             }
-                                           
+                                            disabled={loading || !auth?.user?.address}
                                             >
                                             Make Payment
-                                        </button>
+                                        </button> */}
+
+                                        {auth?.token && cart?.length > 0 && (
+                                                <button
+                                                    className="btn btn-primary"
+                                                    onClick={() =>
+                                                        navigate("/payment", {
+                                                            state: { total: totalPrice() },
+                                                        })
+                                                    }
+                                                    disabled={loading || !auth?.user?.address}
+                                                >
+                                                    Make Payment
+                                                </button>
+                                            )}
+
 
                                     </>
                                 )}
