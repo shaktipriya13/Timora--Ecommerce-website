@@ -286,9 +286,9 @@ const CartPage = () => {
     // Total price (formatted)
     const totalPrice = () => {
         let total = cart.reduce((sum, item) => sum + item.price, 0);
-        return total.toLocaleString("en-US", {
+        return total.toLocaleString("en-IN", {
             style: "currency",
-            currency: "USD",
+            currency: "INR",
         });
     };
 
