@@ -379,15 +379,23 @@ const CartPage = () => {
                             </div>
 
                             {auth?.token && cart.length > 0 && auth?.user?.address && (
+                                // <button
+                                //     className="btn btn-primary"
+                                //     onClick={() =>
+                                //         navigate("/payment", {
+                                //             // state: { total: totalPrice() },
+                                //             state: { total: totalPriceNumber() }, // Use numeric value
+                                //         })
+                                //     }
+                                // >
                                 <button
-                                    className="btn btn-primary"
-                                    onClick={() =>
-                                        navigate("/payment", {
-                                            // state: { total: totalPrice() },
-                                            state: { total: totalPriceNumber() }, // Use numeric value
-                                        })
-                                    }
-                                >
+                                        className="btn btn-primary"
+                                        onClick={() =>
+                                            navigate("/payment", {
+                                                state: { total: totalPriceNumber() }, // Use numeric value
+                                            })
+                                        }
+                                    >
                                     Make Payment
                                 </button>
                             )}
