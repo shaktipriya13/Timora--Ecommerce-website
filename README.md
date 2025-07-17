@@ -135,7 +135,7 @@ timora-ecommerce/
 
 ## 🌐 Deployment
 
-The application is live on  **Render** . Visit the deployed site here: [Timora E-commerce](https://timora.onrender.com/).
+The application is live on  **Render** . Visit the deployed site here: [Timora E-commerce](https://timora-shaktipriya.onrender.com/).
 
 To deploy your own version:
 
@@ -172,12 +172,6 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes (`git commit -m 'Add your feature'`).
 4. Push to the branch (`git push origin feature/your-feature`).
 5. Create a pull request.
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License. See the [LICENSE](https://grok.com/chat/LICENSE) file for details.
 
 ---
 
