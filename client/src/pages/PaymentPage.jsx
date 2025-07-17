@@ -238,9 +238,10 @@ const PaymentForm = ({ defaultAmount }) => {
         }
 
         try {
-            const { data } = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/payment/order`, {
+            const { data } = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/v1/payment/order`, {
                 amount: Number(amount),
             });
+            console.log("API Response:", data);
 
             const options = {
                 key: import.meta.env.VITE_RAZORPAY_KEY_ID,
@@ -250,7 +251,7 @@ const PaymentForm = ({ defaultAmount }) => {
                 description: "Test Transaction",
                 order_id: data.order.id,
                 handler: async function (response) {
-                    const verify = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/payment/verify`, {
+                    const verify = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/v1/payment/verify`, {
                         razorpay_order_id: response.razorpay_order_id,
                         razorpay_payment_id: response.razorpay_payment_id,
                         razorpay_signature: response.razorpay_signature,
