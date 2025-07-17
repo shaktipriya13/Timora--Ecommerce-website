@@ -327,7 +327,7 @@ const CartPage = () => {
                                 <div className="row card flex-row mb-2" key={p._id}>
                                     <div className="col-md-4">
                                         <img
-                                            src={`${import.meta.env.VITE_SERVER_URL}/api/v1/product/product-photo/${p._id}`}
+                                            src={`${import.meta.env.VITE_API}/api/v1/product/product-photo/${p._id}`}
                                             className="card-img-top"
                                             alt={p.name}
                                             height="130px"
